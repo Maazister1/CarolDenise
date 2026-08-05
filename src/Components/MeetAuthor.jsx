@@ -38,15 +38,15 @@ function MeetAuthor() {
 
                         {/* Bio Paragraph 2 */}
                         <p className="text-sm sm:text-base text-[#14213D]/80 leading-relaxed mb-8">
-                            Today, her writing explores loneliness, resilience, and personal growth — encouraging readers to strengthen relationships and become a positive influence in the lives of others.
+                            These experiences shaped her passion for helping people discover hope, purpose, and connection in every stage of life. Today, her writing explores the challenges of loneliness, resilience, and personal growth, encouraging readers to strengthen relationships, embrace their unique gifts, and become a positive influence in the lives of others. Every book reflects her commitment to inspiring hope that reaches beyond the page.
                         </p>
 
-                        {/* Read More Button */}
+                        {/* View More Button */}
                         <a 
-                            href="#read-more" 
+                            href="#view-more" 
                             className="inline-flex items-center gap-2 bg-transparent hover:bg-black/5 text-[#14213D] border border-[#14213D]/30 text-xs font-bold tracking-widest px-8 py-4 rounded-none no-underline transition-all uppercase"
                         >
-                            READ MORE 
+                            VIEW MORE 
                             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
                             </svg>
