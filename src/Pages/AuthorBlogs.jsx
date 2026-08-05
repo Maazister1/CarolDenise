@@ -26,7 +26,7 @@ function AuthorBlog() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                         <div className="lg:col-span-6">
-                            <div className="w-full h-[300px] sm:h-[400px] overflow-hidden bg-[#14213D]/5 border border-[#14213D]/10">
+                            <div className="w-full h-300px sm:h-400px overflow-hidden bg-[#14213D]/5 border border-[#14213D]/10">
                                 <img 
                                     src={img1} 
                                     alt="Matriarch-In-Training" 
@@ -83,7 +83,7 @@ function AuthorBlog() {
                             </a>
                         </div>
                         <div className="lg:col-span-6 order-1 lg:order-2">
-                            <div className="w-full h-[300px] sm:h-[400px] overflow-hidden bg-white border border-[#14213D]/10">
+                            <div className="w-full h-300px sm:h-400px overflow-hidden bg-white border border-[#14213D]/10">
                                 <img 
                                     src={img2} 
                                     alt="Youth Mentoring" 
@@ -100,7 +100,7 @@ function AuthorBlog() {
                 <div className="max-w-7xl mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                         <div className="lg:col-span-6">
-                            <div className="w-full h-[300px] sm:h-[400px] overflow-hidden bg-[#14213D]/5 border border-[#14213D]/10">
+                            <div className="w-full h-300px sm:h-400px overflow-hidden bg-[#14213D]/5 border border-[#14213D]/10">
                                 <img 
                                     src={img3} 
                                     alt="Superheroes Workshops" 

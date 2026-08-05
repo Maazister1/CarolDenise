@@ -26,7 +26,7 @@ function Author() {
                         
                         {/* Left Side: Author Image */}
                         <div className="lg:col-span-6">
-                            <div className="w-full h-[380px] sm:h-[500px] overflow-hidden bg-[#14213D]/5 border border-[#14213D]/10">
+                            <div className="w-full h-380px sm:h-500px overflow-hidden bg-[#14213D]/5 border border-[#14213D]/10">
                                 <img 
                                     src={author1} 
                                     alt="Carol Denise writing" 
