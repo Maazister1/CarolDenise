@@ -1,6 +1,6 @@
 import React from 'react';
-import author from '../assets/author.jpg';
-import book0 from '../assets/book0.png';
+import author from '../assets/book0.png';
+import book0 from '../assets/book3.png';
 
 function Hero() {
     return (

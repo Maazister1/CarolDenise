@@ -1,5 +1,5 @@
 import React from 'react';
-import author1 from '../assets/author1.jpg';
+import author1 from '../assets/book0.png';
 
 function MeetAuthor() {
     return (
