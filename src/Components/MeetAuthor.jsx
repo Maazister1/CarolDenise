@@ -43,7 +43,7 @@ function MeetAuthor() {
 
                         {/* View More Button */}
                         <a 
-                            href="#view-more" 
+                            href="/pages/author" 
                             className="inline-flex items-center gap-2 bg-transparent hover:bg-black/5 text-[#14213D] border border-[#14213D]/30 text-xs font-bold tracking-widest px-8 py-4 rounded-none no-underline transition-all uppercase"
                         >
                             VIEW MORE 

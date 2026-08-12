@@ -30,7 +30,9 @@ function Hero() {
                         {/* CTA Buttons */}
                         <div className="flex flex-wrap items-center gap-4">
                             <a 
-                                href="#purchase" 
+                              href="https://www.amazon.com/stores/Carol-Denise/author/B0DZWH9JJN?ref=ap_rdr&shoppingPortalEnabled=true" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
                                 className="bg-[#111111] hover:bg-[#14213D] text-white text-xs font-bold tracking-widest px-8 py-4 rounded-none no-underline transition-all uppercase"
                             >
                                 PURCHASE THE BOOK

@@ -19,7 +19,7 @@ function Blogs() {
                         </h2>
                     </div>
                     <a 
-                        href="#all-programs" 
+                        href="/pages/authorblogs" 
                         className="text-xs font-bold uppercase tracking-wider text-[#14213D] hover:text-[#E5A93B] no-underline transition-colors self-start md:self-auto mb-2"
                     >
                         ALL PROGRAMS
@@ -45,7 +45,7 @@ function Blogs() {
                             A guided reading circle for women stepping into the role of leading a family — built around the chapters of The Family Matriarch.
                         </p>
                         <a 
-                            href="#learn-more-1" 
+                            href="/pages/authorblogs" 
                             className="text-xs font-bold uppercase tracking-wider text-[#14213D] hover:text-[#E5A93B] no-underline transition-colors mt-auto"
                         >
                             LEARN MORE
@@ -68,7 +68,7 @@ function Blogs() {
                             Years of mentoring through school partnership programs, community organizations and youth leadership initiatives.
                         </p>
                         <a 
-                            href="#learn-more-2" 
+                            href="/pages/authorblogs" 
                             className="text-xs font-bold uppercase tracking-wider text-[#14213D] hover:text-[#E5A93B] no-underline transition-colors mt-auto"
                         >
                             LEARN MORE
@@ -91,7 +91,7 @@ function Blogs() {
                             Story-led workshops for young men on impact, ingenuity, and knowing they are wanted.
                         </p>
                         <a 
-                            href="#learn-more-3" 
+                            href="/pages/authorblogs" 
                             className="text-xs font-bold uppercase tracking-wider text-[#14213D] hover:text-[#E5A93B] no-underline transition-colors mt-auto"
                         >
                             LEARN MORE
