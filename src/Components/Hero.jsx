@@ -19,7 +19,7 @@ function Hero() {
 
                         {/* Main Headline matching screenshot typography */}
                         <h1 className="text-4xl sm:text-6xl lg:text-6xl font-serif font-normal text-[#14213D] leading-[1.1] tracking-tight mb-6">
-                            A labor and a <span className="italic">legacy of love.</span>
+                            A labor and A <span className="italic">legacy of love.</span>
                         </h1>
 
                         {/* Description */}
