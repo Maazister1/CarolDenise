@@ -20,7 +20,7 @@ function Blogs() {
                         </h2>
                     </div>
                     <a 
-                        href="#all-blogs" 
+                        href="/blogs" 
                         className="text-xs font-bold uppercase tracking-wider text-[#14213D] hover:text-[#E5A93B] no-underline transition-colors self-start md:self-auto mb-2"
                     >
                         ALL BLOGS
