@@ -1,5 +1,7 @@
+
 // import React, { useState, useRef, useEffect } from 'react';
 // import { useLocation } from 'react-router-dom';
+// import logoImage from '../assets/logo.png'; // Make sure logo.png exists in your assets folder
 
 // function Navbar() {
 //     const [menuOpen, setMenuOpen] = useState(false);
@@ -31,10 +33,9 @@
 //         <div className="w-full px-4 md:px-8 pt-4 pb-6 z-50 relative font-sans">
 //             <nav className="max-w-7xl mx-auto bg-white px-6 py-4 flex items-center justify-between rounded-none border-b border-[#14213D]/20 shadow-none">
                 
-//                 {/* Logo Section */}
-//                 <a href="/" className="flex flex-col no-underline pl-2 group">
-//                     <span className="font-serif text-lg tracking-tight text-[#14213D] leading-tight group-hover:text-[#14213D] transition-colors">Carol Denise Long</span>
-//                     <span className="font-sans text-[9px] tracking-[0.2em] uppercase text-[#14213D]/70 font-semibold">THE FAMILY MATRIARCH</span>
+//                 {/* Logo Section with logo.png */}
+//                 <a href="/" className="flex items-center no-underline pl-2 group">
+//                     <img src={logoImage} alt="Carol Denise Logo" className="h-10 sm:h-12 w-auto object-contain" />
 //                 </a>
 
 //                 {/* Desktop Menu Items */}
@@ -164,7 +165,7 @@
 //                 {menuOpen && (
 //                     <div className="absolute top-full left-0 w-full bg-white border-t border-[#14213D]/10 flex flex-col p-6 gap-3 xl:hidden z-50 shadow-xl rounded-none">
 //                         <a href="/" onClick={() => setMenuOpen(false)} className={`text-base font-medium no-underline py-2 border-b border-[#14213D]/10 ${currentPath === '/' ? 'text-[#14213D] font-bold' : 'text-[#14213D]/80'}`}>Home</a>
-//                         <a href="/pages/authorblogs" onClick={() => setMenuOpen(false)} className={`text-base font-medium no-underline py-2 border-b border-[#14213D]/10 ${isActive('/pages/authorblogs') ? 'text-[#14213D] font-bold' : 'text-[#14213D]/80'}`}>Blogs</a>
+//                         <a href="/blogs" onClick={() => setMenuOpen(false)} className={`text-base font-medium no-underline py-2 border-b border-[#14213D]/10 ${isActive('/pages/authorblogs') ? 'text-[#14213D] font-bold' : 'text-[#14213D]/80'}`}>Blogs</a>
                         
 //                         <div className="py-1 border-b border-[#14213D]/10 pb-3">
 //                             <span className="text-xs font-semibold text-[#14213D]/50 uppercase tracking-wider">Books</span>
@@ -249,15 +250,15 @@ function Navbar() {
                         <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${currentPath === '/' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </a>
 
-                    {/* Blogs */}
+                    {/* Blogs - Fixed to /blogs */}
                     <a 
-                        href="/pages/authorblogs" 
+                        href="/blogs" 
                         className={`relative py-1 text-sm font-medium transition-colors no-underline group ${
-                            isActive('/pages/authorblogs') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
+                            isActive('/blogs') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
                         }`}
                     >
                         Blogs
-                        <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${isActive('/pages/authorblogs') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                        <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${isActive('/blogs') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </a>
 
                     {/* Books Dropdown */}
@@ -362,7 +363,7 @@ function Navbar() {
                 {menuOpen && (
                     <div className="absolute top-full left-0 w-full bg-white border-t border-[#14213D]/10 flex flex-col p-6 gap-3 xl:hidden z-50 shadow-xl rounded-none">
                         <a href="/" onClick={() => setMenuOpen(false)} className={`text-base font-medium no-underline py-2 border-b border-[#14213D]/10 ${currentPath === '/' ? 'text-[#14213D] font-bold' : 'text-[#14213D]/80'}`}>Home</a>
-                        <a href="/pages/authorblogs" onClick={() => setMenuOpen(false)} className={`text-base font-medium no-underline py-2 border-b border-[#14213D]/10 ${isActive('/pages/authorblogs') ? 'text-[#14213D] font-bold' : 'text-[#14213D]/80'}`}>Blogs</a>
+                        <a href="/blogs" onClick={() => setMenuOpen(false)} className={`text-base font-medium no-underline py-2 border-b border-[#14213D]/10 ${isActive('/blogs') ? 'text-[#14213D] font-bold' : 'text-[#14213D]/80'}`}>Blogs</a>
                         
                         <div className="py-1 border-b border-[#14213D]/10 pb-3">
                             <span className="text-xs font-semibold text-[#14213D]/50 uppercase tracking-wider">Books</span>

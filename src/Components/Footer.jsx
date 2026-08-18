@@ -71,11 +71,10 @@ function Footer() {
                             </div>
                         </div>
                     </div>
-
                 </div>
 
                 {/* Bottom Divider */}
-                <div className="w-full h-[1px] bg-white/15 mb-8"></div>
+                <div className="w-full h-1px bg-white/15 mb-8"></div>
 
                 {/* Bottom Copyright & Permanent White Social Links */}
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
