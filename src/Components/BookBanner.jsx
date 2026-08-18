@@ -23,7 +23,7 @@ function BookBanner() {
                 </div>
 
                 {/* Divider Line */}
-                <div className="w-full h-[1px] bg-white/20 mb-16"></div>
+                <div className="w-full h-1px bg-white/20 mb-16"></div>
 
                 {/* Three Columns Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16">

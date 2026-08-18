@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import book1 from '../assets/book0.png';
+import book1 from '../assets/book1.png';
 
 function TheFamily() {
     const [selectedFormat, setSelectedFormat] = useState('Hardcover');

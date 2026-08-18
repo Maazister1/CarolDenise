@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import heroBg from '../assets/bg.png';
+import heroBg from '../assets/cover.png';
 
 function Hero() {
     return (
