@@ -82,6 +82,39 @@ function AudioBookSection() {
                             </div>
                         </div>
 
+                        {/* 4th set */}
+
+                          <div className="flex items-center gap-8 flex-shrink-0" aria-hidden="true">
+                            <div className="bg-[#f9f9f9] border border-[#14213D]/10 px-8 py-5 rounded-lg flex items-center justify-center w-48 h-24 shadow-sm">
+                                <img src={audibleIcon} alt="Audible" className="max-h-16 w-auto object-contain scale-125" />
+                            </div>
+                            <div className="bg-[#f9f9f9] border border-[#14213D]/10 px-8 py-5 rounded-lg flex items-center justify-center w-48 h-24 shadow-sm">
+                                <img src={amazonLogo} alt="Amazon" className="max-h-10 w-auto object-contain" />
+                            </div>
+                        </div>
+
+                        {/* 5th set */}
+
+                          <div className="flex items-center gap-8 flex-shrink-0" aria-hidden="true">
+                            <div className="bg-[#f9f9f9] border border-[#14213D]/10 px-8 py-5 rounded-lg flex items-center justify-center w-48 h-24 shadow-sm">
+                                <img src={audibleIcon} alt="Audible" className="max-h-16 w-auto object-contain scale-125" />
+                            </div>
+                            <div className="bg-[#f9f9f9] border border-[#14213D]/10 px-8 py-5 rounded-lg flex items-center justify-center w-48 h-24 shadow-sm">
+                                <img src={amazonLogo} alt="Amazon" className="max-h-10 w-auto object-contain" />
+                            </div>
+                        </div>
+
+                        {/* 6th set */}
+
+                          <div className="flex items-center gap-8 flex-shrink-0" aria-hidden="true">
+                            <div className="bg-[#f9f9f9] border border-[#14213D]/10 px-8 py-5 rounded-lg flex items-center justify-center w-48 h-24 shadow-sm">
+                                <img src={audibleIcon} alt="Audible" className="max-h-16 w-auto object-contain scale-125" />
+                            </div>
+                            <div className="bg-[#f9f9f9] border border-[#14213D]/10 px-8 py-5 rounded-lg flex items-center justify-center w-48 h-24 shadow-sm">
+                                <img src={amazonLogo} alt="Amazon" className="max-h-10 w-auto object-contain" />
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
