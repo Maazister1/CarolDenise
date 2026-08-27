@@ -4,16 +4,17 @@ import img2 from '../assets/2.jpg';
 import img3 from '../assets/3.jpg';
 
 function CommunityPartners() {
-    // September 2026 calendar configuration
+    // August 2026 calendar configuration
     const weekDays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
     
-    // Days arrangement for September 2026 (Starts on Tuesday, total 30 days)
+    // Days arrangement for August 2026 (Starts on Saturday, total 31 days)
     const daysInMonth = [
-        null, 1, 2, 3, 4, 5, 6,
-        7, 8, 9, 10, 11, 12, 13,
-        14, 15, 16, 17, 18, 19, 20,
-        21, 22, 23, 24, 25, 26, 27,
-        28, 29, 30, null, null, null, null
+        null, null, null, null, null, 1, 2,
+        3, 4, 5, 6, 7, 8, 9,
+        10, 11, 12, 13, 14, 15, 16,
+        17, 18, 19, 20, 21, 22, 23,
+        24, 25, 26, 27, 28, 29, 30,
+        31, null, null, null, null, null, null
     ];
 
     return (
@@ -112,29 +113,34 @@ function CommunityPartners() {
 
                 </div>
 
-                {/* Upcoming Book Launch Event Banner (Clean Left Aligned Layout) */}
-                <div className="w-full bg-[#14213D] text-white py-10 px-8 md:px-14 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl border border-white/10">
+                {/* Event Banner with Lighter Background Filter */}
+                <div 
+                    className="w-full text-white py-10 px-8 md:px-14 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl border border-white/10 relative bg-cover bg-center bg-no-repeat"
+                    style={{ 
+                        backgroundImage: `linear-gradient(rgba(20, 33, 61, 0.65), rgba(20, 33, 61, 0.65)), url('https://i.pinimg.com/736x/3b/26/df/3b26df9528057796fe82c763a72d8ca2.jpg')` 
+                    }}
+                >
                     
                     {/* Left Text Content */}
-                    <div className="text-left max-w-xl">
+                    <div className="text-left max-w-xl z-10">
                         <span className="text-sm sm:text-base font-bold uppercase tracking-[0.25em] text-white block mb-1">
-                            SEP 15
+                            AUG 27 | 6:30 - 8:30 PM
                         </span>
-                        <span className="text-xs uppercase tracking-[0.2em] text-white/70 font-semibold mb-2 block">
-                            Upcoming Exclusive Event
+                        <span className="text-xs uppercase tracking-[0.2em] text-white/90 font-semibold mb-2 block">
+                            Author Event At Epilogue Bookshop
                         </span>
                         <h3 className="text-2xl sm:text-3xl font-serif font-normal tracking-tight text-white m-0">
-                            Global Virtual Book Launch & Q&A
+                            C. Ellan Rose — Menomonee Falls, WI
                         </h3>
-                        <p className="text-xs sm:text-sm text-white/80 mt-2 font-normal leading-relaxed">
-                            Join us live on September 15, 2026, for an interactive session, live reading, and special announcements regarding the upcoming release.
+                        <p className="text-xs sm:text-sm text-white/95 mt-2 font-normal leading-relaxed">
+                            Joined live for the author showcase event celebrating local community literature and readings.
                         </p>
                     </div>
                     
                     {/* Right side Pure White Calendar Widget */}
-                    <div className="shrink-0 bg-white text-[#14213D] p-5 w-full sm:w-[280px] shadow-2xl">
+                    <div className="shrink-0 bg-white text-[#14213D] p-5 w-full sm:w-[280px] shadow-2xl z-10">
                         <div className="flex justify-between items-center mb-3 pb-2 border-b border-[#14213D]/10">
-                            <span className="text-xs font-bold tracking-wider uppercase text-[#14213D]">September 2026</span>
+                            <span className="text-xs font-bold tracking-wider uppercase text-[#14213D]">August 2026</span>
                             <svg className="w-4 h-4 text-[#14213D]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
@@ -150,7 +156,7 @@ function CommunityPartners() {
                         {/* Calendar Grid */}
                         <div className="grid grid-cols-7 gap-1 text-center">
                             {daysInMonth.map((date, idx) => {
-                                const isTargetDate = date === 15;
+                                const isTargetDate = date === 27;
                                 return (
                                     <div 
                                         key={idx} 
@@ -174,8 +180,8 @@ function CommunityPartners() {
                             })}
                         </div>
                         <div className="mt-3 pt-2 border-t border-[#14213D]/10 flex items-center justify-between text-[10px] text-[#14213D]/70 font-medium">
-                            <span>Event Day Marked</span>
-                            <span className="text-emerald-600 font-bold flex items-center gap-1">✓ Sep 15</span>
+                            <span>Event Attended</span>
+                            <span className="text-emerald-600 font-bold flex items-center gap-1">✓ Aug 27</span>
                         </div>
                     </div>
 
