@@ -28,7 +28,7 @@ function CommunityPartners() {
                             Community
                         </span>
                         <h2 className="text-3xl sm:text-5xl font-serif font-normal text-[#14213D] tracking-tight">
-                            Bookshop & Community Partners
+                            Bookshops & Community Partners
                         </h2>
                     </div>
                     <a 
