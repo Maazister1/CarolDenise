@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+# Videos
+public/family.mp4
+public/superhero.mp4
+public/celebrityreview.mp4
+public/*.mp4
