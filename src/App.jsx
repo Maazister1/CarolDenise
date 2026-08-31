@@ -23,6 +23,9 @@ import Reviews from './Pages/Reviews'
 import AudioBookSection from './Components/AudioBookSection'
 import BookShowcase2 from './Components/Bookshowcase2'
 import CommunityPage from './Pages/CommunityPage'
+import Booksvideos from './Components/Booksvideos'
+import CelebrityReview from './Components/CelebrityReview'
+import Resources from './Components/Resources'
 
 // Home Page Component containing all landing page sections
 function Home() {
@@ -30,11 +33,14 @@ function Home() {
     <>
       <Hero />
       <StatsCounter />
+      <Booksvideos />
       <BookShowcase />
       <MeetAuthor />
       <AudioBookSection />
       <Community />
+      <Resources />
       <Blogs />
+      <CelebrityReview />
       <Readers />
       <Newsletter />
     </>
