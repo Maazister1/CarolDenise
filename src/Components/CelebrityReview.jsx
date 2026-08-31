@@ -5,7 +5,7 @@ function CelebrityReview() {
 
     const celebrityData = {
         title: 'Celebrity Shoutout',
-        src: '/celebrityreview.mp4',
+        src: 'https://res.cloudinary.com/gm9p9g7j/video/upload/v1788205756/celebrityreview.mp4',
         description: 'Special thoughts on the series from our guest.'
     };
 
@@ -79,6 +79,7 @@ function CelebrityReview() {
                                     src={celebrityData.src} 
                                     controls 
                                     autoPlay
+                                    playsInline
                                     className="w-full h-full object-contain"
                                 />
                             </div>
