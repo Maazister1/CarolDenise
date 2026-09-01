@@ -40,7 +40,7 @@ function Home() {
       <Community />
       <Resources />
       <Blogs />
-      <CelebrityReview />
+     
       <Readers />
       <Newsletter />
     </>
