@@ -61,7 +61,7 @@ function SuperHeros() {
             vol1: {
                 title: 'Superhéroes En Entrenamiento',
                 subtitle: 'Entonces, ¿Qué PASÓ...? Volumen Uno',
-                description: 'Superhéroes En Entrenamiento: Entonces, ¿Qué PASÓ...? es un viaje atractivo y empoderador diseñado para guiar a las mentes jóvenes. Explora los principios fundamentales del carácter, la resiliencia y el crecimiento a través de historias cercanas.',
+                description: 'Superhéroes En Entrenamiento: Entonces, ¿Qué PASÓ...? é un viaje atractivo y empoderador diseñado para guiar a las mentes jóvenes. Explora los principios fundamentales del carácter, la resiliencia y el crecimiento a través de historias cercanas.',
                 amazonUrl: 'https://www.amazon.com/Superh%C3%A9roes-En-Entrenamiento-Entonces-Spanish-ebook/dp/B0GK4MJ3WT?ref_=ast_author_dp_rw&th=1&psc=1'
             },
             vol2: {
@@ -81,7 +81,7 @@ function SuperHeros() {
 
     const currentLangData = contentData[selectedLang];
 
-    // Intersection Observer with refined threshold for accurate section tracking
+    // Intersection Observer to track active volume on scroll
     useEffect(() => {
         const sections = ['volume1', 'volume2', 'volume3'];
         
@@ -110,7 +110,7 @@ function SuperHeros() {
     }, []);
 
     const scrollToSection = (id) => {
-        setActiveSection(id); // Instantly update active state on click
+        setActiveSection(id);
         const element = document.getElementById(id);
         if (element) {
             element.scrollIntoView({ behavior: 'smooth' });
@@ -118,72 +118,50 @@ function SuperHeros() {
     };
 
     return (
-        <section className="w-full bg-white py-16 md:py-24 px-6 md:px-12 font-sans">
+        <section className="w-full bg-white py-6 md:py-10 px-6 md:px-12 font-sans">
             <div className="max-w-7xl mx-auto">
                 
-                {/* --- LANGUAGE SELECTION TABS --- */}
-                <div className="flex flex-col items-center mb-10">
-                    <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-3">
-                        SELECT EDITION LANGUAGE
-                    </span>
-                    <div className="flex flex-wrap justify-center gap-2.5">
-                        {['English', 'French', 'Spanish'].map((lang) => (
-                            <button
-                                key={lang}
-                                onClick={() => setSelectedLang(lang)}
-                                className={`px-6 py-2.5 text-xs font-bold tracking-widest uppercase transition-all rounded-md border ${
-                                    selectedLang === lang 
-                                        ? 'bg-[#14213D] text-white border-[#14213D] shadow-sm' 
-                                        : 'bg-white text-[#14213D] border-[#14213D]/30 hover:bg-black/5'
-                                }`}
-                            >
-                                {lang}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-                {/* --- NAVIGATION BUTTONS: WIDER, SHORTER HEIGHT, SINGLE LINE TEXT --- */}
-                <div className="flex justify-center items-center gap-4 sm:gap-6 mb-16">
+                {/* --- TOP NAVIGATION BUTTONS (Balanced gap reduction) --- */}
+                <div className="flex justify-between items-center mb-12 border-b border-gray-100 pb-4 px-6 sm:px-16 md:px-24">
                     <button 
                         onClick={() => scrollToSection('volume1')}
-                        className={`w-36 sm:w-44 h-12 sm:h-14 flex items-center justify-center gap-2 font-bold text-xs sm:text-sm tracking-wider transition-all shadow-sm ${
+                        className={`text-sm font-bold tracking-widest uppercase transition-all pb-1 relative group ${
                             activeSection === 'volume1' 
-                                ? 'bg-[#14213D] text-white border border-[#14213D]' 
-                                : 'bg-white text-[#14213D] border border-[#14213D] hover:bg-[#14213D]/5'
+                                ? 'text-[#14213D]' 
+                                : 'text-[#14213D]/60 hover:text-[#14213D]'
                         }`}
                     >
-                        <span>VOL</span>
-                        <span>01</span>
+                        VOL 1
+                        <span className={`absolute bottom-[-17px] left-0 w-full h-[2px] bg-[#14213D] transition-all duration-300 ${activeSection === 'volume1' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </button>
+
                     <button 
                         onClick={() => scrollToSection('volume2')}
-                        className={`w-36 sm:w-44 h-12 sm:h-14 flex items-center justify-center gap-2 font-bold text-xs sm:text-sm tracking-wider transition-all shadow-sm ${
+                        className={`text-sm font-bold tracking-widest uppercase transition-all pb-1 relative group ${
                             activeSection === 'volume2' 
-                                ? 'bg-[#14213D] text-white border border-[#14213D]' 
-                                : 'bg-white text-[#14213D] border border-[#14213D] hover:bg-[#14213D]/5'
+                                ? 'text-[#14213D]' 
+                                : 'text-[#14213D]/60 hover:text-[#14213D]'
                         }`}
                     >
-                        <span>VOL</span>
-                        <span>02</span>
+                        VOL 2
+                        <span className={`absolute bottom-[-17px] left-0 w-full h-[2px] bg-[#14213D] transition-all duration-300 ${activeSection === 'volume2' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </button>
+
                     <button 
                         onClick={() => scrollToSection('volume3')}
-                        className={`w-36 sm:w-44 h-12 sm:h-14 flex items-center justify-center gap-2 font-bold text-xs sm:text-sm tracking-wider transition-all shadow-sm ${
+                        className={`text-sm font-bold tracking-widest uppercase transition-all pb-1 relative group ${
                             activeSection === 'volume3' 
-                                ? 'bg-[#14213D] text-white border border-[#14213D]' 
-                                : 'bg-white text-[#14213D] border border-[#14213D] hover:bg-[#14213D]/5'
+                                ? 'text-[#14213D]' 
+                                : 'text-[#14213D]/60 hover:text-[#14213D]'
                         }`}
                     >
-                        <span>VOL</span>
-                        <span>03</span>
+                        VOL 3
+                        <span className={`absolute bottom-[-17px] left-0 w-full h-[2px] bg-[#14213D] transition-all duration-300 ${activeSection === 'volume3' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </button>
                 </div>
 
                 {/* ==================== VOLUME 1 SECTION ==================== */}
-                <div id="volume1" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-24 pt-8 border-t border-gray-100">
-                    
-                    {/* Left Side: Book Mockup */}
+                <div id="volume1" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-24 pt-4">
                     <div className="lg:col-span-5 flex justify-center">
                         <div className="w-full max-w-[420px] h-[460px] sm:h-[540px] bg-[#F7F7F7] flex items-center justify-center p-8 overflow-hidden shadow-sm">
                             <img 
@@ -194,8 +172,30 @@ function SuperHeros() {
                         </div>
                     </div>
 
-                    {/* Right Side: Details */}
                     <div className="lg:col-span-7 flex flex-col items-start text-left">
+                        
+                        {/* --- SELECT EDITION LANGUAGE TABS --- */}
+                        <div className="flex flex-col items-start mb-6 w-full">
+                            <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-2.5">
+                                SELECT EDITION LANGUAGE
+                            </span>
+                            <div className="flex flex-wrap justify-start gap-2.5">
+                                {['English', 'French', 'Spanish'].map((lang) => (
+                                    <button
+                                        key={lang}
+                                        onClick={() => setSelectedLang(lang)}
+                                        className={`px-6 py-2.5 text-xs font-bold tracking-widest uppercase transition-all rounded-md border ${
+                                            selectedLang === lang 
+                                                ? 'bg-[#14213D] text-white border-[#14213D] shadow-sm' 
+                                                : 'bg-white text-[#14213D] border-[#14213D]/30 hover:bg-black/5'
+                                        }`}
+                                    >
+                                        {lang}
+                                    </button>
+                                ))}
+                            </div>
+                        </div>
+
                         <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-3">
                             YOUNG MEN SERIES · 2026 · VOLUME 01 ({selectedLang.toUpperCase()})
                         </span>
@@ -212,7 +212,6 @@ function SuperHeros() {
                             {currentLangData.vol1.description}
                         </p>
 
-                        {/* Format Selector */}
                         <div className="w-full mb-8">
                             <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-4 block">
                                 CHOOSE YOUR PREFERENCE ({selectedLang.toUpperCase()})
@@ -245,7 +244,6 @@ function SuperHeros() {
                             </div>
                         </div>
 
-                        {/* Action Buttons */}
                         <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
                             <a 
                                 href={currentLangData.vol1.amazonUrl} 
@@ -268,11 +266,8 @@ function SuperHeros() {
                     </div>
                 </div>
 
-
                 {/* ==================== VOLUME 2 SECTION ==================== */}
                 <div id="volume2" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-24 pt-16 border-t border-gray-200">
-                    
-                    {/* Left Side: Book Mockup */}
                     <div className="lg:col-span-5 flex justify-center">
                         <div className="w-full max-w-[420px] h-[460px] sm:h-[540px] bg-[#F7F7F7] flex items-center justify-center p-8 overflow-hidden shadow-sm">
                             <img 
@@ -283,7 +278,6 @@ function SuperHeros() {
                         </div>
                     </div>
 
-                    {/* Right Side: Details */}
                     <div className="lg:col-span-7 flex flex-col items-start text-left">
                         <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-3">
                             YOUNG MEN SERIES · 2026 · VOLUME 02 ({selectedLang.toUpperCase()})
@@ -301,7 +295,6 @@ function SuperHeros() {
                             {currentLangData.vol2.description}
                         </p>
 
-                        {/* Format Selector */}
                         <div className="w-full mb-8">
                             <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-4 block">
                                 CHOOSE YOUR PREFERENCE ({selectedLang.toUpperCase()})
@@ -334,7 +327,6 @@ function SuperHeros() {
                             </div>
                         </div>
 
-                        {/* Action Buttons */}
                         <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
                             <a 
                                 href={currentLangData.vol2.amazonUrl} 
@@ -357,11 +349,8 @@ function SuperHeros() {
                     </div>
                 </div>
 
-
                 {/* ==================== VOLUME 3 SECTION (COMING SOON) ==================== */}
                 <div id="volume3" className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start pt-16 border-t border-gray-200">
-                    
-                    {/* Left Side: Coming Soon Image */}
                     <div className="lg:col-span-5 flex justify-center">
                         <div className="w-full max-w-[420px] h-[460px] sm:h-[540px] bg-[#F7F7F7] flex items-center justify-center p-8 overflow-hidden shadow-sm relative">
                             <div className="absolute top-4 left-4 z-20 bg-white text-[#14213D] px-4 py-1.5 border border-gray-200">
@@ -377,7 +366,6 @@ function SuperHeros() {
                         </div>
                     </div>
 
-                    {/* Right Side: Details */}
                     <div className="lg:col-span-7 flex flex-col items-start text-left">
                         <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-3">
                             YOUNG MEN SERIES · UPCOMING · VOLUME 03 ({selectedLang.toUpperCase()})
@@ -395,7 +383,6 @@ function SuperHeros() {
                             {currentLangData.vol3.description}
                         </p>
 
-                        {/* Format Placeholder */}
                         <div className="w-full mb-8 opacity-60">
                             <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-4 block">
                                 CHOOSE YOUR PREFERENCE (COMING SOON)
@@ -418,7 +405,6 @@ function SuperHeros() {
                             </div>
                         </div>
 
-                        {/* Disabled Action Buttons */}
                         <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
                             <button 
                                 disabled 

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function Readers() {
-    // Reviews array with dynamic star ratings (3, 4, or 5 stars)
+    const [currentIndex, setCurrentIndex] = useState(0);
+
     const reviews = [
         {
             quote: "Superheroes in Training is a refreshing and heartfelt collection that blends humor with meaningful life lessons. Carol Denise writes in a way that feels genuine and uplifting.",
@@ -29,6 +30,14 @@ function Readers() {
         }
     ];
 
+    const prevSlide = () => {
+        setCurrentIndex((prev) => (prev === 0 ? reviews.length - 1 : prev - 1));
+    };
+
+    const nextSlide = () => {
+        setCurrentIndex((prev) => (prev === reviews.length - 1 ? 0 : prev + 1));
+    };
+
     return (
         <section className="w-full bg-white py-16 md:py-24 font-sans border-t border-[#14213D]/10 overflow-hidden">
             <div className="max-w-7xl mx-auto px-6 md:px-12 mb-12">
@@ -40,26 +49,51 @@ function Readers() {
                 </h2>
             </div>
 
-            {/* Infinite Sliding Marquee Container */}
-            <div className="relative w-full overflow-hidden flex">
-                <div className="flex gap-8 animate-marquee whitespace-nowrap py-4">
-                    {/* Render reviews twice to create a seamless infinite loop */}
-                    {[...reviews, ...reviews].map((review, index) => (
-                        <div 
-                            key={index} 
-                            className="w-[320px] sm:w-[420px] md:w-[480px] flex-shrink-0 bg-[#F7F7F7] p-8 border border-[#14213D]/10 flex flex-col justify-between whitespace-normal"
-                        >
-                            <p className="text-base sm:text-lg font-serif italic text-[#14213D] leading-relaxed mb-6">
-                                "{review.quote}"
+            {/* Main Layout: Left Video in Phone Mockup, Right Single Slider Card with Arrows */}
+            <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                {/* Left Side: Phone Mockup with Video */}
+                <div className="lg:col-span-5 flex justify-center lg:justify-start">
+                    <div className="relative w-[280px] sm:w-[310px] h-[560px] sm:h-[620px] bg-black rounded-[45px] p-3.5 shadow-2xl border-[4px] border-[#222] flex-shrink-0">
+                        {/* Phone Speaker / Notch */}
+                        <div className="absolute top-6 left-1/2 transform -translate-x-1/2 w-32 h-5 bg-black rounded-full z-30 flex items-center justify-center">
+                            <div className="w-12 h-1 bg-[#333] rounded-full"></div>
+                        </div>
+
+                        {/* Phone Inner Screen */}
+                        <div className="relative w-full h-full rounded-[35px] overflow-hidden bg-black">
+                            <video 
+                                src="https://res.cloudinary.com/gm9p9g7j/video/upload/v1788205756/celebrityreview.mp4"
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                className="w-full h-full object-cover"
+                            />
+                        </div>
+                    </div>
+                </div>
+
+                {/* Right Side: Single Review Card with Navigation Arrows */}
+                <div className="lg:col-span-7 flex flex-col justify-center w-full">
+                    <div className="relative bg-[#F7F7F7] p-8 sm:p-12 border border-[#14213D]/10 flex flex-col justify-between min-h-[320px] sm:min-h-[360px] shadow-sm">
+                        
+                        {/* Review Content */}
+                        <div>
+                            <p className="text-lg sm:text-2xl font-serif italic text-[#14213D] leading-relaxed mb-8">
+                                "{reviews[currentIndex].quote}"
                             </p>
-                            
-                            <div className="mt-auto">
+                        </div>
+
+                        {/* Rating, Name & Controls */}
+                        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mt-auto">
+                            <div>
                                 {/* Star Rating Display */}
                                 <div className="flex items-center gap-1 mb-3">
                                     {[...Array(5)].map((_, i) => (
                                         <svg
                                             key={i}
-                                            className={`w-4 h-4 ${i < review.rating ? 'text-[#E5A93B]' : 'text-gray-300'}`}
+                                            className={`w-4 h-4 sm:w-5 sm:h-5 ${i < reviews[currentIndex].rating ? 'text-[#E5A93B]' : 'text-gray-300'}`}
                                             fill="currentColor"
                                             viewBox="0 0 20 20"
                                         >
@@ -71,31 +105,35 @@ function Readers() {
                                 {/* Name & Role */}
                                 <div className="flex items-center gap-2">
                                     <span className="w-4 h-[1px] bg-[#14213D]/50"></span>
-                                    <span className="text-xs font-semibold uppercase tracking-wider text-[#14213D]">
-                                        {review.name} <span className="font-normal text-[#14213D]/70 normal-case ml-1">{review.role}</span>
+                                    <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#14213D]">
+                                        {reviews[currentIndex].name} <span className="font-normal text-[#14213D]/70 normal-case ml-1">{reviews[currentIndex].role}</span>
                                     </span>
                                 </div>
                             </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
 
-            {/* Seamless marquee animation styles */}
-            <style>{`
-                @keyframes marquee {
-                    0% { transform: translateX(0%); }
-                    100% { transform: translateX(-50%); }
-                }
-                .animate-marquee {
-                    display: flex;
-                    width: max-content;
-                    animation: marquee 35s linear infinite;
-                }
-                .animate-marquee:hover {
-                    animation-play-state: paused;
-                }
-            `}</style>
+                            {/* Arrow Controls < > */}
+                            <div className="flex items-center gap-3 self-end sm:self-auto">
+                                <button 
+                                    onClick={prevSlide}
+                                    className="w-10 h-10 rounded-full border border-[#14213D]/20 flex items-center justify-center text-[#14213D] hover:bg-[#14213D] hover:text-white transition-all shadow-sm"
+                                    aria-label="Previous Review"
+                                >
+                                    &lt;
+                                </button>
+                                <button 
+                                    onClick={nextSlide}
+                                    className="w-10 h-10 rounded-full border border-[#14213D]/20 flex items-center justify-center text-[#14213D] hover:bg-[#14213D] hover:text-white transition-all shadow-sm"
+                                    aria-label="Next Review"
+                                >
+                                    &gt;
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
         </section>
     );
 }
