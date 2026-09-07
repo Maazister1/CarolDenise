@@ -5,9 +5,7 @@ import Hero from './Components/Hero'
 import StatsCounter from './Components/StatsCounter'
 import BookShowcase from './Components/BookShowcase'
 import MeetAuthor from './Components/MeetAuthor'
-import BookBanner from './Components/BookBanner'
 import Community from './Components/Community'
-import Podcast from './Components/AudioBookSection'
 
 import Readers from './Components/Readers'
 import Newsletter from './Components/Newsletter'
@@ -26,6 +24,7 @@ import Booksvideos from './Components/Booksvideos'
 import Resources from './Components/Resources'
 import Audiobooks from './Pages/Audiobook'
 import Event from './Components/Event'
+import Distribution from './Pages/Distribution'
 
 // Home Page Component containing all landing page sections
 function Home() {
@@ -59,8 +58,9 @@ function App() {
         <Route path="/pages/communitypages" element={<CommunityPage />} />
         <Route path="/pages/reviews" element={<Reviews />} />
         <Route path="/bookshowcase" element={<BookShowcase />} />
-          <Route path="/bookshowcase2" element={<BookShowcase2 />} />
-            <Route path="/pages/audiobooks" element={<Audiobooks />} />
+        <Route path="/bookshowcase2" element={<BookShowcase2 />} />
+        <Route path="/pages/audiobooks" element={<Audiobooks />} />
+        <Route path="/pages/distribution" element={<Distribution />} />
 
         {/* <Route path="/blogs" element={<Blogs />} /> */}
       </Routes>

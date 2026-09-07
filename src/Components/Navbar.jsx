@@ -150,12 +150,12 @@ function Navbar() {
 
                     {/* Blogs */}
                     <a 
-                        href="/blogs" 
+                        href="/pages/distribution" 
                         className={`relative py-1 text-sm font-medium transition-colors no-underline group ${
                             isActive('/blogs') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
                         }`}
                     >
-                        Blogs
+                      Distribution
                         <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${isActive('/blogs') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </a> 
 
