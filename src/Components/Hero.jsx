@@ -47,39 +47,7 @@ function Hero() {
                         </a>
                     </div>
 
-                    {/* Second Row: Family Matriarch Trailer with White Circle & Blue Play Icon */}
-                    <div>
-                        <a 
-                            href="https://youtu.be/VngkN34yjak?si=zYNMrYDYYpDxy8Wd" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="bg-transparent hover:bg-white/10 text-white border border-white/50 text-[11px] font-bold tracking-wider px-6 py-3 rounded-none no-underline transition-all uppercase inline-flex items-center gap-3"
-                        >
-                            <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-                                <svg className="w-3 h-3 text-[#14213D] fill-current translate-x-[1px]" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </span>
-                            WATCH FAMILY MATRIARCH TRAILER
-                        </a>
-                    </div>
-
-                    {/* Third Row: Superheroes Trailer with White Circle & Blue Play Icon */}
-                    <div>
-                        <a 
-                            href="https://youtu.be/5lWyg2cNauQ?si=Chjd9ZkZxG1mab4U" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="bg-transparent hover:bg-white/10 text-white border border-white/50 text-[11px] font-bold tracking-wider px-6 py-3 rounded-none no-underline transition-all uppercase inline-flex items-center gap-3"
-                        >
-                            <span className="w-6 h-6 rounded-full bg-white flex items-center justify-center shrink-0 shadow-sm">
-                                <svg className="w-3 h-3 text-[#14213D] fill-current translate-x-[1px]" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z"/>
-                                </svg>
-                            </span>
-                            WATCH SUPERHEROES TRAILER
-                        </a>
-                    </div>
+                   
 
                 </div>
 

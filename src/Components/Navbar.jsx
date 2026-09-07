@@ -59,7 +59,7 @@ function Navbar() {
                             isActive('/pages/author') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
                         }`}
                     >
-                        About the author
+                        About 
                         <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${isActive('/pages/author') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </a>
 
