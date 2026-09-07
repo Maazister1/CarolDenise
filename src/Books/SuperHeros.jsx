@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import bookImage from '../assets/book2.png';
+import bookImage from '../assets/vol1.png';
+import bookImage2 from '../assets/vol2.png';
 import comingImage from '../assets/coming.png';
 import amazonIcon from '../assets/amazon.png';
 
@@ -271,7 +272,7 @@ function SuperHeros() {
                     <div className="lg:col-span-5 flex justify-center">
                         <div className="w-full max-w-[420px] h-[460px] sm:h-[540px] bg-[#F7F7F7] flex items-center justify-center p-8 overflow-hidden shadow-sm">
                             <img 
-                                src={bookImage} 
+                                src={bookImage2} 
                                 alt="Superheroes In Training Book Volume 2" 
                                 className="max-h-full max-w-full object-contain shadow-2xl"
                             />

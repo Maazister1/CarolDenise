@@ -1,5 +1,7 @@
 import React from 'react';
-import book1 from '../assets/book2.png';
+import book1 from '../assets/vol1.png';
+import book2 from '../assets/vol2.png';
+
 import comingImage from '../assets/coming.png';
 import amazonIcon from '../assets/amazon.png';
 
@@ -62,7 +64,7 @@ function BookShowcase2() {
                                     PURCHASE ON AMAZON
                                 </span>
                             </a>
-                            <img src={book1} alt="Volume 2" className="max-h-[260px] w-auto object-contain drop-shadow-lg mt-4" />
+                            <img src={book2} alt="Volume 2" className="max-h-[260px] w-auto object-contain drop-shadow-lg mt-4" />
                         </div>
                         <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#14213D] mb-3">V O L U M E &nbsp; 0 2</span>
                         <p className="text-xs text-[#14213D]/70 mb-6 px-4 leading-relaxed">{desc2}</p>

@@ -8,7 +8,7 @@ import MeetAuthor from './Components/MeetAuthor'
 import BookBanner from './Components/BookBanner'
 import Community from './Components/Community'
 import Podcast from './Components/AudioBookSection'
-import Blogs from './Components/Blogs'
+
 import Readers from './Components/Readers'
 import Newsletter from './Components/Newsletter'
 import Footer from './Components/Footer'
@@ -18,14 +18,14 @@ import SuperHeros from './Books/SuperHeros'
 // Import Pages from Pages folder
 import Contact from './Pages/Contact'
 import Author from './Pages/Author'
-import AuthorBlogs from './Pages/CommunityPage'
 import Reviews from './Pages/Reviews'
 import AudioBookSection from './Components/AudioBookSection'
 import BookShowcase2 from './Components/Bookshowcase2'
 import CommunityPage from './Pages/CommunityPage'
 import Booksvideos from './Components/Booksvideos'
-import CelebrityReview from './Components/CelebrityReview'
 import Resources from './Components/Resources'
+import Audiobooks from './Pages/Audiobook'
+import Event from './Components/Event'
 
 // Home Page Component containing all landing page sections
 function Home() {
@@ -38,9 +38,8 @@ function Home() {
       <MeetAuthor />
       <AudioBookSection />
       <Community />
+      <Event />
       <Resources />
-      <Blogs />
-     
       <Readers />
       <Newsletter />
     </>
@@ -60,7 +59,10 @@ function App() {
         <Route path="/pages/communitypages" element={<CommunityPage />} />
         <Route path="/pages/reviews" element={<Reviews />} />
         <Route path="/bookshowcase" element={<BookShowcase />} />
-        <Route path="/blogs" element={<Blogs />} />
+          <Route path="/bookshowcase2" element={<BookShowcase2 />} />
+            <Route path="/pages/audiobooks" element={<Audiobooks />} />
+
+        {/* <Route path="/blogs" element={<Blogs />} /> */}
       </Routes>
       <Footer />
     </Router>

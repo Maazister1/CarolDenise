@@ -2,19 +2,19 @@ import React from 'react';
 import img1 from '../assets/1.jpg';
 import img2 from '../assets/2.jpg';
 import img3 from '../assets/3.jpg';
+import calenderbg from '../assets/CalenderBg.png'
 
 function CommunityPartners() {
-    // August 2026 calendar configuration
+    // October 2026 calendar configuration
     const weekDays = ['M', 'T', 'W', 'T', 'F', 'S', 'S'];
     
-    // Days arrangement for August 2026 (Starts on Saturday, total 31 days)
+    // Days arrangement for October 2026 (Starts on Thursday, total 31 days)
     const daysInMonth = [
-        null, null, null, null, null, 1, 2,
-        3, 4, 5, 6, 7, 8, 9,
-        10, 11, 12, 13, 14, 15, 16,
-        17, 18, 19, 20, 21, 22, 23,
-        24, 25, 26, 27, 28, 29, 30,
-        31, null, null, null, null, null, null
+        null, null, null, 1, 2, 3, 4,
+        5, 6, 7, 8, 9, 10, 11,
+        12, 13, 14, 15, 16, 17, 18,
+        19, 20, 21, 22, 23, 24, 25,
+        26, 27, 28, 29, 30, 31, null
     ];
 
     return (
@@ -113,56 +113,63 @@ function CommunityPartners() {
 
                 </div>
 
-                {/* Event Banner with Lighter Background Filter */}
-                <div 
-                    className="w-full text-white py-10 px-8 md:px-14 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl border border-white/10 relative bg-cover bg-center bg-no-repeat"
+                {/* Event Banner with Enhanced Text Readability & Professional Layout */}
+                {/* <div 
+                    className="w-full text-white py-12 px-8 md:px-14 flex flex-col lg:flex-row items-center justify-between gap-10 shadow-2xl border border-white/10 relative bg-cover bg-center bg-no-repeat rounded-2xl overflow-hidden"
                     style={{ 
-                        backgroundImage: `linear-gradient(rgba(20, 33, 61, 0.65), rgba(20, 33, 61, 0.65)), url('https://i.pinimg.com/736x/3b/26/df/3b26df9528057796fe82c763a72d8ca2.jpg')` 
+                        backgroundImage: `linear-gradient(rgba(15, 23, 42, 0.88), rgba(15, 23, 42, 0.88)), url('https://images.unsplash.com/photo-1521587760476-6c12a4b040da?q=80&w=1200&auto=format&fit=crop')` 
                     }}
                 >
                     
-                    {/* Left Text Content */}
-                    <div className="text-left max-w-xl z-10">
-                        <span className="text-sm sm:text-base font-bold uppercase tracking-[0.25em] text-white block mb-1">
-                            AUG 27 | 6:30 - 8:30 PM
-                        </span>
-                        <span className="text-xs uppercase tracking-[0.2em] text-white/90 font-semibold mb-2 block">
-                            Author Event At Epilogue Bookshop
-                        </span>
-                        <h3 className="text-2xl sm:text-3xl font-serif font-normal tracking-tight text-white m-0">
-                            C. Ellan Rose — Menomonee Falls, WI
+                    <div className="text-left max-w-xl z-10 flex flex-col gap-3">
+                        <div className="flex items-center gap-3">
+                            <span className="bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[11px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-full">
+                                Grand Opening Event
+                            </span>
+                            <span className="text-xs font-semibold tracking-wider text-gray-300">
+                                OCT 17 | 10:00 AM
+                            </span>
+                        </div>
+
+                        <h3 className="text-2xl sm:text-3xl font-serif font-normal tracking-tight text-white m-0 leading-snug">
+                            The Book Nook (New & Used Bookstore)
                         </h3>
-                        <p className="text-xs sm:text-sm text-white/95 mt-2 font-normal leading-relaxed">
-                            Joined live for the author showcase event celebrating local community literature and readings.
+
+                        <p className="text-sm font-medium text-amber-200/90 tracking-wide">
+                            📍 62 N. Main Street, Hartford, WI 53027
+                        </p>
+
+                        <p className="text-xs sm:text-sm text-gray-200 leading-relaxed font-normal mt-1">
+                            Free tote bags for the first 50 customers, giveaways, live music (<span className="text-white font-semibold">Mariah Kiefer</span>), coffee bar, and local sweets. Featured local vendors: <span className="text-white font-semibold">Groth's Goodies</span>, <span className="text-white font-semibold">Three Little Sprinkles Home Bakery</span>, <span className="text-white font-semibold">Flower Cafe</span>.
                         </p>
                     </div>
                     
-                    {/* Right side Pure White Calendar Widget */}
-                    <div className="shrink-0 bg-white text-[#14213D] p-5 w-full sm:w-[280px] shadow-2xl z-10">
+                
+                    <div className="shrink-0 bg-white text-[#14213D] p-5 w-full sm:w-[280px] shadow-2xl z-10 rounded-xl">
                         <div className="flex justify-between items-center mb-3 pb-2 border-b border-[#14213D]/10">
-                            <span className="text-xs font-bold tracking-wider uppercase text-[#14213D]">August 2026</span>
+                            <span className="text-xs font-bold tracking-wider uppercase text-[#14213D]">October 2026</span>
                             <svg className="w-4 h-4 text-[#14213D]/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                             </svg>
                         </div>
                         
-                        {/* Weekdays header */}
+                       
                         <div className="grid grid-cols-7 gap-1 text-center mb-2">
                             {weekDays.map((day, idx) => (
                                 <span key={idx} className="text-[10px] font-bold text-[#14213D]/50">{day}</span>
                             ))}
                         </div>
 
-                        {/* Calendar Grid */}
+                   
                         <div className="grid grid-cols-7 gap-1 text-center">
                             {daysInMonth.map((date, idx) => {
-                                const isTargetDate = date === 27;
+                                const isTargetDate = date === 17;
                                 return (
                                     <div 
                                         key={idx} 
-                                        className={`h-7 text-xs flex items-center justify-center relative font-semibold ${
+                                        className={`h-7 text-xs flex items-center justify-center relative font-semibold rounded ${
                                             isTargetDate 
-                                                ? 'bg-[#14213D] text-white font-bold shadow-md rounded-none scale-105' 
+                                                ? 'bg-[#14213D] text-white font-bold shadow-md scale-105' 
                                                 : date 
                                                 ? 'text-[#14213D]/80 hover:bg-[#14213D]/5' 
                                                 : 'text-transparent'
@@ -180,12 +187,12 @@ function CommunityPartners() {
                             })}
                         </div>
                         <div className="mt-3 pt-2 border-t border-[#14213D]/10 flex items-center justify-between text-[10px] text-[#14213D]/70 font-medium">
-                            <span>Event Attended</span>
-                            <span className="text-emerald-600 font-bold flex items-center gap-1">✓ Aug 27</span>
+                            <span>Carol Attending</span>
+                            <span className="text-emerald-600 font-bold flex items-center gap-1">✓ Oct 17</span>
                         </div>
                     </div>
 
-                </div>
+                </div> */}
 
             </div>
         </section>
