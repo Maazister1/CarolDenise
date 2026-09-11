@@ -1,3 +1,5 @@
+
+
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './Components/Navbar'
@@ -6,7 +8,6 @@ import StatsCounter from './Components/StatsCounter'
 import BookShowcase from './Components/BookShowcase'
 import MeetAuthor from './Components/MeetAuthor'
 import Community from './Components/Community'
-
 import Readers from './Components/Readers'
 import Newsletter from './Components/Newsletter'
 import Footer from './Components/Footer'
@@ -26,7 +27,9 @@ import Audiobooks from './Pages/Audiobook'
 import Event from './Components/Event'
 import Distribution from './Pages/Distribution'
 
-// Home Page Component containing all landing page sections
+// Import the Floating Buy Button Component
+import FloatingBuyButton from './Components/FloatingBuyButton'
+
 function Home() {
   return (
     <>
@@ -61,9 +64,11 @@ function App() {
         <Route path="/bookshowcase2" element={<BookShowcase2 />} />
         <Route path="/pages/audiobooks" element={<Audiobooks />} />
         <Route path="/pages/distribution" element={<Distribution />} />
-
-        {/* <Route path="/blogs" element={<Blogs />} /> */}
       </Routes>
+      
+      {/* Floating Buy Now Button Added Here */}
+      <FloatingBuyButton />
+
       <Footer />
     </Router>
   )

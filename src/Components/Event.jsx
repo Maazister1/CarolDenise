@@ -1,18 +1,18 @@
 import React from 'react'
 import calenderbg from '../assets/CalenderBg.png'
-import { IconMapPin, IconCalendar, IconClock, IconMusic, IconSparkles } from '@tabler/icons-react'
+import { IconMapPin, IconCalendar, IconClock, IconSparkles } from '@tabler/icons-react'
 
 function Event() {
-    // Weekdays configuration for October 2026 calendar view
+    // Weekdays configuration for September 2026 calendar view
     const weekDays = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'];
     
-    // October 2026 days array (October starts on a Thursday = index 4)
+    // September 2026 days array (September starts on a Tuesday = index 2)
     const daysInMonth = [
-        null, null, null, null, 1, 2, 3,
-        4, 5, 6, 7, 8, 9, 10,
-        11, 12, 13, 14, 15, 16, 17,
-        18, 19, 20, 21, 22, 23, 24,
-        25, 26, 27, 28, 29, 30, 31
+        null, null, 1, 2, 3, 4, 5,
+        6, 7, 8, 9, 10, 11, 12,
+        13, 14, 15, 16, 17, 18, 19,
+        20, 21, 22, 23, 24, 25, 26,
+        27, 28, 29, 30
     ];
 
     return (
@@ -38,25 +38,25 @@ function Event() {
                         <div className="flex flex-wrap items-center gap-2.5">
                             <span className="bg-amber-500/25 text-amber-300 border border-amber-500/40 text-[10px] font-bold uppercase tracking-[0.2em] px-3 py-1 rounded-full flex items-center gap-1.5 shadow-sm">
                                 <IconSparkles className="w-3.5 h-3.5" />
-                                Grand Opening Event
+                                UntitledTown Book & Author Festival
                             </span>
                             <span className="text-[11px] font-semibold tracking-wider text-gray-100 flex items-center gap-1.5 bg-black/40 px-3 py-1 rounded-full backdrop-blur-md">
                                 <IconClock className="w-3.5 h-3.5 text-amber-300" />
-                                OCT 17 | 10:00 AM
+                                SEP 25 - 27, 2026
                             </span>
                         </div>
 
                         <h3 className="text-2xl sm:text-3xl font-serif font-normal tracking-tight text-white m-0 leading-snug drop-shadow-md">
-                            The Book Nook (New & Used Bookstore)
+                            Lions Mouth Author Talk
                         </h3>
 
                         <p className="text-xs sm:text-sm font-medium text-amber-200 tracking-wide flex items-center gap-1.5 drop-shadow">
                             <IconMapPin className="w-4 h-4 text-amber-400 shrink-0" />
-                            62 N. Main Street, Hartford, WI 53027
+                            Lions Mouth Bookstore, 211 N Washington St, Green Bay, 54301
                         </p>
 
                         <p className="text-xs sm:text-sm text-gray-100 leading-relaxed font-normal bg-black/40 p-3.5 rounded-xl backdrop-blur-md border border-white/10 shadow-lg">
-                            Free tote bags for the first 50 customers, giveaways, live music (<span className="text-white font-semibold inline-flex items-center gap-1"><IconMusic className="w-3.5 h-3.5 inline mr-0.5 text-amber-300" />Mariah Kiefer</span>), coffee bar, and local sweets. Featured local vendors: <span className="text-white font-semibold">Groth's Goodies</span>, <span className="text-white font-semibold">Three Little Sprinkles Home Bakery</span>, <span className="text-white font-semibold">Flower Cafe</span>.
+                            Friday Sept 25 - Sun Sept 27, 2026. Join us at Lions Mouth Bookstore for an exclusive author talk, readings, and community book signing event as part of the UntitledTown festival.
                         </p>
                     </div>
                     
@@ -65,7 +65,7 @@ function Event() {
                         <div className="flex justify-between items-center mb-2.5 pb-2 border-b border-[#14213D]/10">
                             <span className="text-xs font-bold tracking-wider uppercase text-[#14213D] flex items-center gap-1.5">
                                 <IconCalendar className="w-4 h-4 text-[#14213D]/70" />
-                                October 2026
+                                September 2026
                             </span>
                         </div>
                         
@@ -79,20 +79,24 @@ function Event() {
                         {/* Days Grid */}
                         <div className="grid grid-cols-7 gap-1 text-center">
                             {daysInMonth.map((date, idx) => {
-                                const isTargetDate = date === 17;
+                                // Highlighting festival dates: 25, 26, 27
+                                const isFestivalDate = date >= 25 && date <= 27;
+                                const isMainDate = date === 25;
                                 return (
                                     <div 
                                         key={idx} 
                                         className={`h-7 text-xs flex items-center justify-center relative font-semibold rounded ${
-                                            isTargetDate 
+                                            isMainDate 
                                                 ? 'bg-[#14213D] text-white font-bold shadow-md scale-105' 
+                                                : isFestivalDate
+                                                ? 'bg-[#14213D]/20 text-[#14213D] font-bold'
                                                 : date 
                                                 ? 'text-[#14213D]/80 hover:bg-[#14213D]/5' 
                                                 : 'text-transparent'
                                         }`}
                                     >
                                         {date}
-                                        {isTargetDate && (
+                                        {isMainDate && (
                                             <span className="absolute -top-1 -right-1 flex h-2.5 w-2.5">
                                                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-900 opacity-75"></span>
                                                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-yellow-500"></span>
@@ -104,8 +108,8 @@ function Event() {
                         </div>
 
                         <div className="mt-3 pt-2 border-t border-[#14213D]/10 flex items-center justify-between text-[11px] text-[#14213D]/70 font-medium">
-                            <span>Carol Attending</span>
-                            <span className="text-emerald-600 font-bold flex items-center gap-1">✓ Oct 17</span>
+                            <span>Festival Dates</span>
+                            <span className="text-emerald-600 font-bold flex items-center gap-1">✓ Sep 25-27</span>
                         </div>
                     </div>
 

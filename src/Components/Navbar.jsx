@@ -97,7 +97,7 @@ function Navbar() {
                                             ebooksOpen ? 'bg-[#14213D] text-white' : 'text-[#14213D]/80 hover:bg-[#14213D] hover:text-white'
                                         }`}
                                     >
-                                        <span className="transition-transform duration-200 group-hover/ebook:translate-x-1">E-Books</span>
+                                        <span className="transition-transform duration-200 group-hover/ebook:translate-x-1">Books</span>
                                         <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${ebooksOpen ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
                                         </svg>
