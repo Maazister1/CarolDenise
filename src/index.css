@@ -1,2 +1,168 @@
 @import "tailwindcss";
 
+@theme {
+  --animate-page-in: page-in 0.6s ease-out backwards;
+
+  @keyframes page-in {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@theme {
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pop {
+    from {
+      opacity: 0;
+      transform: scale(0.85);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+}
+
+/* Page sections picked up by useScrollReveal.
+   In the components layer so a section's own utility classes still win.
+   Visible state uses translate: none so fixed-position modals inside keep working. */
+@layer components {
+  .scroll-reveal {
+    opacity: 0;
+    transition: opacity 1s ease-out, translate 1s ease-out;
+  }
+
+  .scroll-reveal.from-up { translate: 0 48px; }
+  .scroll-reveal.from-left { translate: -64px 0; }
+  .scroll-reveal.from-right { translate: 64px 0; }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    translate: none;
+  }
+}
+
+/* Inner scroll animations for sections wrapped in <Reveal> or picked up by useScrollReveal.
+   Fill mode "backwards" leaves no transform behind once finished. */
+.reveal.is-visible :is(h1, h2) {
+  animation: rise 0.8s ease-out 0.15s backwards;
+}
+
+.reveal.is-visible :is(h2 + p, h1 + p) {
+  animation: rise 0.8s ease-out 0.3s backwards;
+}
+
+.reveal.is-visible img {
+  animation: pop 1s ease-out 0.2s backwards;
+}
+
+.reveal.is-visible .grid > * {
+  animation: rise 0.7s ease-out backwards;
+}
+
+.reveal.is-visible .grid > :nth-child(1) { animation-delay: 0.2s; }
+.reveal.is-visible .grid > :nth-child(2) { animation-delay: 0.35s; }
+.reveal.is-visible .grid > :nth-child(3) { animation-delay: 0.5s; }
+.reveal.is-visible .grid > :nth-child(4) { animation-delay: 0.65s; }
+.reveal.is-visible .grid > :nth-child(5) { animation-delay: 0.8s; }
+.reveal.is-visible .grid > :nth-child(n + 6) { animation-delay: 0.95s; }
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Smooth hover / press feedback for every link and button */
+  a,
+  button {
+    @apply transition-all duration-300 ease-out;
+  }
+
+  a.inline-flex:hover,
+  button.inline-flex:not(:disabled):hover {
+    @apply -translate-y-0.5 shadow-lg;
+  }
+
+  a:active,
+  button:not(:disabled):active {
+    @apply scale-[0.97];
+  }
+}
+
+/* ---------- Button animations ----------
+   Kept outside @layer so they win over the Tailwind utility classes on the buttons. */
+
+/* Filled navy buttons: light shine sweeps across on hover */
+:is(a, button).inline-flex[class*="bg-[#14213D]"]:not(:disabled) {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+:is(a, button).inline-flex[class*="bg-[#14213D]"]:not(:disabled)::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -75%;
+  width: 50%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: skewX(-20deg);
+  transition: left 0.7s ease-out;
+  pointer-events: none;
+  z-index: -1;
+}
+
+:is(a, button).inline-flex[class*="bg-[#14213D]"]:not(:disabled):hover::after {
+  left: 130%;
+}
+
+/* Outline buttons: navy fill slides in from the left, text turns white */
+:is(a, button).inline-flex[class*="border-[#14213D]"]:not(:disabled) {
+  background-image: linear-gradient(#14213D, #14213D);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 0% 100%;
+  transition: background-size 0.4s ease-out, color 0.3s ease-out, border-color 0.3s ease-out,
+    transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+:is(a, button).inline-flex[class*="border-[#14213D]"]:not(:disabled):hover {
+  background-size: 100% 100%;
+  border-color: #14213D;
+  color: #fff;
+}
+
+/* Clear keyboard focus ring */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #14213D;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

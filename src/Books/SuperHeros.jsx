@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import bookImage from '../assets/vol1.png';
 import bookImage2 from '../assets/vol2.png';
 import comingImage from '../assets/coming.png';
@@ -264,6 +265,12 @@ function SuperHeros() {
                                 FREE CHAPTER
                             </a>
                         </div>
+                        <Link
+                            to="/pages/audiobooks"
+                            className="mt-4 inline-flex items-center justify-center bg-[#14213D] hover:bg-[#14213D]/90 text-white text-xs font-bold tracking-widest px-8 py-4 rounded-none no-underline transition-all uppercase shadow-md"
+                        >
+                            AUDIO BOOK
+                        </Link>
                     </div>
                 </div>
 
@@ -347,6 +354,12 @@ function SuperHeros() {
                                 FREE CHAPTER
                             </a>
                         </div>
+                        <Link
+                            to="/pages/audiobooks"
+                            className="mt-4 inline-flex items-center justify-center bg-[#14213D] hover:bg-[#14213D]/90 text-white text-xs font-bold tracking-widest px-8 py-4 rounded-none no-underline transition-all uppercase shadow-md"
+                        >
+                            AUDIO BOOK
+                        </Link>
                     </div>
                 </div>
 

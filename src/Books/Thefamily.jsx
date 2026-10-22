@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import book1 from '../assets/book1.png';
 
 function TheFamily() {
@@ -8,8 +9,7 @@ function TheFamily() {
     const formats = [
         { name: 'eBook', price: '$9.99' },
         { name: 'Paperback', price: '$19.99' },
-        { name: 'Hardcover', price: '$39.99' },
-        { name: 'Audiobook', price: '$13.00' }
+        { name: 'Hardcover', price: '$39.99' }
     ];
 
     const bookContent = {
@@ -20,8 +20,7 @@ function TheFamily() {
             links: {
                 eBook: 'https://www.amazon.com/Family-Matriarch-Labor-Legacy-Love-ebook/dp/B0CKNSH8Z1/',
                 Paperback: 'https://www.amazon.com/Family-Matriarch-Labor-Legacy-Love/dp/B0CKNSH8Z1/',
-                Hardcover: 'https://www.amazon.com/Family-Matriarch-Labor-Legacy-Love/dp/B0CKNSH8Z1/',
-                Audiobook: 'https://www.barnesandnoble.com/w/the-family-matriarch-carol-denise/1144175986?ean=2940202201547'
+                Hardcover: 'https://www.amazon.com/Family-Matriarch-Labor-Legacy-Love/dp/B0CKNSH8Z1/'
             }
         },
         French: {
@@ -31,8 +30,7 @@ function TheFamily() {
             links: {
                 eBook: 'https://www.amazon.com/Matriarche-Familiale-Travail-H%C3%A9ritage-damour-ebook/dp/B0DHLRYGXM?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.7O-5GYzBewovFaty3Ggy-7T2bYOqgyKHvSHufeIjegmRuds64lrI_sZgptXNksH9H7K-pJKspHss90XvqZxmVA8Y6A6c4UBSvgd_rALGYQw_2tw0Ta7ZoZXdWz1ZcqD3.DRAYJTmbg0EKk4hR_e4AVUpm4ll3WSaij3o8UBnLTSA&dib_tag=AUTHOR',
                 Paperback: 'https://www.amazon.com/Matriarche-Familiale-Travail-H%C3%A9ritage-damour-ebook/dp/B0DHLRYGXM?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.7O-5GYzBewovFaty3Ggy-7T2bYOqgyKHvSHufeIjegmRuds64lrI_sZgptXNksH9H7K-pJKspHss90XvqZxmVA8Y6A6c4UBSvgd_rALGYQw_2tw0Ta7ZoZXdWz1ZcqD3.DRAYJTmbg0EKk4hR_e4AVUpm4ll3WSaij3o8UBnLTSA&dib_tag=AUTHOR',
-                Hardcover: 'https://www.amazon.com/Matriarche-Familiale-Travail-H%C3%A9ritage-damour-ebook/dp/B0DHLRYGXM?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.7O-5GYzBewovFaty3Ggy-7T2bYOqgyKHvSHufeIjegmRuds64lrI_sZgptXNksH9H7K-pJKspHss90XvqZxmVA8Y6A6c4UBSvgd_rALGYQw_2tw0Ta7ZoZXdWz1ZcqD3.DRAYJTmbg0EKk4hR_e4AVUpm4ll3WSaij3o8UBnLTSA&dib_tag=AUTHOR',
-                Audiobook: 'https://www.amazon.com/Matriarche-Familiale-Travail-H%C3%A9ritage-damour-ebook/dp/B0DHLRYGXM?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.7O-5GYzBewovFaty3Ggy-7T2bYOqgyKHvSHufeIjegmRuds64lrI_sZgptXNksH9H7K-pJKspHss90XvqZxmVA8Y6A6c4UBSvgd_rALGYQw_2tw0Ta7ZoZXdWz1ZcqD3.DRAYJTmbg0EKk4hR_e4AVUpm4ll3WSaij3o8UBnLTSA&dib_tag=AUTHOR'
+                Hardcover: 'https://www.amazon.com/Matriarche-Familiale-Travail-H%C3%A9ritage-damour-ebook/dp/B0DHLRYGXM?ref_=ast_author_dp_rw&th=1&psc=1&dib=eyJ2IjoiMSJ9.7O-5GYzBewovFaty3Ggy-7T2bYOqgyKHvSHufeIjegmRuds64lrI_sZgptXNksH9H7K-pJKspHss90XvqZxmVA8Y6A6c4UBSvgd_rALGYQw_2tw0Ta7ZoZXdWz1ZcqD3.DRAYJTmbg0EKk4hR_e4AVUpm4ll3WSaij3o8UBnLTSA&dib_tag=AUTHOR'
             }
         },
         Spanish: {
@@ -42,8 +40,7 @@ function TheFamily() {
             links: {
                 eBook: 'https://www.amazon.com/Familia-Matriarca-Trabajo-Legado-Spanish-ebook/dp/B0GJP52896?ref_=ast_author_dp_rw&th=1&psc=1',
                 Paperback: 'https://www.amazon.com/Familia-Matriarca-Trabajo-Legado-Spanish-ebook/dp/B0GJP52896?ref_=ast_author_dp_rw&th=1&psc=1',
-                Hardcover: 'https://www.amazon.com/Familia-Matriarca-Trabajo-Legado-Spanish-ebook/dp/B0GJP52896?ref_=ast_author_dp_rw&th=1&psc=1',
-                Audiobook: 'https://www.barnesandnoble.com/w/the-family-matriarch-carol-denise/1144175986?ean=2940202201547'
+                Hardcover: 'https://www.amazon.com/Familia-Matriarca-Trabajo-Legado-Spanish-ebook/dp/B0GJP52896?ref_=ast_author_dp_rw&th=1&psc=1'
             }
         }
     };
@@ -160,6 +157,12 @@ function TheFamily() {
                                 FREE CHAPTER
                             </a>
                         </div>
+                        <Link
+                            to="/pages/audiobooks"
+                            className="mt-4 inline-flex items-center justify-center bg-[#14213D] hover:bg-[#14213D]/90 text-white text-xs font-bold tracking-widest px-8 py-4 rounded-none no-underline transition-all uppercase shadow-md"
+                        >
+                            AUDIO BOOK
+                        </Link>
 
                     </div>
 
