@@ -210,7 +210,7 @@ function BookShowcase() {
 
             </div>
             
-            {/* Agar vol1 image ko yahan display karna hai toh sahi img tag use karein */}
+            {/* To display the vol1 image here, add a proper img tag */}
            
 
            <BookShowcase2 />

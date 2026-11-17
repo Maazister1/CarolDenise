@@ -15,7 +15,7 @@ function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        // Yahan aap apni form submission logic (jaise EmailJS ya backend API call) add kar sakte hain
+        // Add your form submission logic here (e.g. EmailJS or a backend API call)
         setSubmitted(true);
     };
 

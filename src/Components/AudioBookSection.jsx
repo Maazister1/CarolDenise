@@ -156,7 +156,7 @@ function AudioBookSection() {
                     </h2>
 
                     <p className="text-sm sm:text-base text-[#14213D]/80 leading-relaxed font-serif italic max-w-2xl mb-8">
-                        Explore our collection! Humaray books mein audiobooks bhi shamil hain. Apne pasandeeda format mein sunne ke liye neechay diye gaye button par click karein.
+                        Explore our collection! Our books are also available as audiobooks. Click the button below to listen on your favorite platform.
                     </p>
 
                     {/* Non-clickable Platform Icons Row */}
