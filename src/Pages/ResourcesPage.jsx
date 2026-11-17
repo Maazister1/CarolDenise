@@ -326,13 +326,16 @@ function ResourcesPage() {
                             The best is yet to come. Why? Because the best is ALWAYS yet to come! And in the end, LOVE WINS!
                         </p>
                     </div>
+                </div>
+            </section>
 
-                    <div className="mt-12 mx-auto max-w-2xl border-t border-white/15 pt-10">
-                        <span className="block text-6xl font-serif text-white/20 leading-none -mb-4">&ldquo;</span>
-                        <blockquote className="text-xl sm:text-3xl font-serif italic leading-snug">
+            {/* ---------- Quote band ---------- */}
+            <section className="w-full bg-white text-[#14213D] py-16 md:py-20 px-6 md:px-12 border-b border-[#14213D]/10">
+                <div className="max-w-3xl mx-auto text-center">
+                    <span className="block text-6xl font-serif text-[#14213D]/25 leading-none -mb-4">&ldquo;</span>
+                    <blockquote className="text-xl sm:text-3xl font-serif italic leading-snug">
                             LOVE WINS! That is the truth. If you cannot bring yourself to believe that yet, you can borrow my faith in love. Love is the MOST valuable tool in your toolbox. Keep that one close.
                         </blockquote>
-                    </div>
                 </div>
             </section>
 
