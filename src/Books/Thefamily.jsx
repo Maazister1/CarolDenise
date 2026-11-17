@@ -59,7 +59,7 @@ function TheFamily() {
                             <img 
                                 src={book1} 
                                 alt="The Family Matriarch Book" 
-                                className="max-h-full max-w-full object-contain shadow-2xl"
+                                className="max-h-full max-w-full object-contain drop-shadow-xl"
                             />
                         </div>
                     </div>

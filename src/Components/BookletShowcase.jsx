@@ -41,7 +41,7 @@ function BookletShowcase() {
                             <img
                                 src={bookletImage}
                                 alt="Message From Mom On Loneliness"
-                                className="max-h-[340px] sm:max-h-[400px] w-auto object-contain drop-shadow-xl"
+                                className="max-h-[340px] sm:max-h-[400px] w-auto object-contain mix-blend-multiply"
                             />
                         </div>
                     </div>

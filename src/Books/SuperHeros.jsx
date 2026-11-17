@@ -169,7 +169,7 @@ function SuperHeros() {
                             <img 
                                 src={bookImage} 
                                 alt="Superheroes In Training Book Volume 1" 
-                                className="max-h-full max-w-full object-contain shadow-2xl"
+                                className="max-h-full max-w-full object-contain drop-shadow-xl"
                             />
                         </div>
                     </div>
@@ -281,7 +281,7 @@ function SuperHeros() {
                             <img 
                                 src={bookImage2} 
                                 alt="Superheroes In Training Book Volume 2" 
-                                className="max-h-full max-w-full object-contain shadow-2xl"
+                                className="max-h-full max-w-full object-contain drop-shadow-xl"
                             />
                         </div>
                     </div>
@@ -375,7 +375,7 @@ function SuperHeros() {
                             <img 
                                 src={comingImage} 
                                 alt="Volume 3 Coming Soon" 
-                                className="max-h-full max-w-full object-contain shadow-2xl"
+                                className="max-h-full max-w-full object-contain drop-shadow-xl"
                             />
                         </div>
                     </div>

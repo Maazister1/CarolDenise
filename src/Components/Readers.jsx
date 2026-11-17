@@ -1,35 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import testimonials from './testimonials';
 
 function Readers() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isVideoOpen, setIsVideoOpen] = useState(false);
 
-    const reviews = [
-        {
-            quote: "Superheroes in Training is a refreshing and heartfelt collection that blends humor with meaningful life lessons. Carol Denise writes in a way that feels genuine and uplifting.",
-            name: "Thomas Kelly",
-            role: "CEO & Founder",
-            rating: 5
-        },
-        {
-            quote: "This book offers more than stories. It provides encouragement, wisdom, and a powerful reminder that everyday moments can shape character and purpose.",
-            name: "Elizabeth",
-            role: "Director",
-            rating: 4
-        },
-        {
-            quote: "As a teenage mom, I found this book very emotional yet uplifting. I hope to pass this down to my daughter, who is now 4.",
-            name: "Ann-Marie Massey",
-            role: "Insurance Broker",
-            rating: 5
-        },
-        {
-            quote: "The Family Matriarch made such a beautiful gift to my granddaughters, and the words moved them as they embarked on a new journey all by themselves.",
-            name: "Liam Steiner",
-            role: "Quality Manager",
-            rating: 3
-        }
-    ];
+    const reviews = testimonials;
 
     // Auto slide loop effect for review cards every 4 seconds
     useEffect(() => {
@@ -95,53 +71,50 @@ function Readers() {
                     </div>
                 </div>
 
-                {/* Right Side: Single Auto-sliding Review Card */}
+                {/* Right Side: Auto-sliding Review Card (same style as the Reviews page) */}
                 <div className="lg:col-span-7 flex flex-col justify-center w-full">
-                    <div className="relative bg-[#F7F7F7] p-6 sm:p-10 border border-[#14213D]/10 flex flex-col justify-between min-h-[280px] sm:min-h-[320px] shadow-sm transition-all duration-500">
-                        
-                        {/* Review Content */}
+                    <div key={currentIndex} className="flex flex-col justify-between p-8 bg-[#F7F7F7] border border-[#14213D]/10 min-h-[320px] animate-page-in">
                         <div>
-                            <p className="text-base sm:text-xl font-serif italic text-[#14213D] leading-relaxed mb-6 transition-opacity duration-300">
+                            <div className="flex items-center gap-1 mb-3">
+                                {[...Array(5)].map((_, i) => (
+                                    <svg key={i} className="w-4 h-4 fill-[#E5A93B]" viewBox="0 0 20 20">
+                                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                                    </svg>
+                                ))}
+                            </div>
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#E5A93B] block mb-3">
+                                {reviews[currentIndex].bookBought}
+                            </span>
+                            <p className="text-base sm:text-lg font-serif italic text-[#14213D] leading-relaxed mb-8">
                                 "{reviews[currentIndex].quote}"
                             </p>
                         </div>
 
-                        {/* Rating, Name & Controls */}
-                        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mt-auto">
-                            <div>
-                                {/* Star Rating Display */}
-                                <div className="flex items-center gap-1 mb-2">
-                                    {[...Array(5)].map((_, i) => (
-                                        <svg
-                                            key={i}
-                                            className={`w-4 h-4 sm:w-5 sm:h-5 ${i < reviews[currentIndex].rating ? 'text-[#E5A93B]' : 'text-gray-300'}`}
-                                            fill="currentColor"
-                                            viewBox="0 0 20 20"
-                                        >
-                                            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                                        </svg>
-                                    ))}
+                        <div className="flex items-center justify-between gap-4 pt-6 border-t border-[#14213D]/10">
+                            <div className="flex items-center gap-4">
+                                <div className="w-12 h-12 rounded-full overflow-hidden bg-[#14213D]/15 shrink-0 border border-[#14213D]/20">
+                                    <img src={reviews[currentIndex].image} alt={reviews[currentIndex].name} className="w-full h-full object-cover" />
                                 </div>
-
-                                {/* Name & Role */}
-                                <div className="flex items-center gap-2">
-                                    <span className="w-3 h-[1px] bg-[#14213D]/50"></span>
-                                    <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#14213D]">
-                                        {reviews[currentIndex].name} <span className="font-normal text-[#14213D]/70 normal-case ml-1">{reviews[currentIndex].role}</span>
-                                    </span>
+                                <div>
+                                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#14213D]">
+                                        {reviews[currentIndex].name}
+                                    </h4>
+                                    <p className="text-xs text-[#14213D]/70 normal-case mt-0.5">
+                                        {reviews[currentIndex].location}
+                                    </p>
                                 </div>
                             </div>
 
                             {/* Arrow Controls < > */}
-                            <div className="flex items-center gap-2 self-end sm:self-auto">
-                                <button 
+                            <div className="flex items-center gap-2 shrink-0">
+                                <button
                                     onClick={prevSlide}
                                     className="w-9 h-9 rounded-full border border-[#14213D]/20 flex items-center justify-center text-[#14213D] hover:bg-[#14213D] hover:text-white transition-all shadow-sm text-sm"
                                     aria-label="Previous Review"
                                 >
                                     &lt;
                                 </button>
-                                <button 
+                                <button
                                     onClick={nextSlide}
                                     className="w-9 h-9 rounded-full border border-[#14213D]/20 flex items-center justify-center text-[#14213D] hover:bg-[#14213D] hover:text-white transition-all shadow-sm text-sm"
                                     aria-label="Next Review"
@@ -150,7 +123,6 @@ function Readers() {
                                 </button>
                             </div>
                         </div>
-
                     </div>
                 </div>
 

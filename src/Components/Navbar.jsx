@@ -72,14 +72,14 @@ function Navbar() {
                             onClick={() => setBooksDropdown(!booksDropdown)}
                             onMouseEnter={() => setBooksDropdown(true)}
                             className={`relative py-1 text-sm font-medium transition-colors bg-transparent border-0 cursor-pointer flex items-center gap-1 group ${
-                                currentPath.includes('/books') || currentPath.includes('/pages/audiobooks') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
+                                currentPath.includes('/books') || currentPath.includes('/pages/audiobooks') || currentPath.includes('/pages/distribution') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
                             }`}
                         >
                             Books
                             <svg className={`w-3.5 h-3.5 transition-transform duration-300 ${booksDropdown ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
                             </svg>
-                            <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${currentPath.includes('/books') || currentPath.includes('/pages/audiobooks') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                            <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${currentPath.includes('/books') || currentPath.includes('/pages/audiobooks') || currentPath.includes('/pages/distribution') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                         </button>
 
                         {booksDropdown && (
@@ -140,6 +140,15 @@ function Navbar() {
                                     Audio Books
                                 </a>
 
+                                {/* Distribution */}
+                                <a 
+                                    href="/pages/distribution" 
+                                    onClick={() => { setBooksDropdown(false); setEbooksOpen(false); }}
+                                    className="px-4 py-3 text-sm font-medium text-[#14213D]/80 hover:bg-[#14213D] hover:text-white hover:pl-6 transition-all duration-200 no-underline block"
+                                >
+                                    Distribution
+                                </a>
+
                             </div>
                         )}
                     </div>
@@ -154,17 +163,6 @@ function Navbar() {
                         Reviews
                         <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${isActive('/pages/reviews') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </a>
-
-                    {/* Blogs */}
-                    <a 
-                        href="/pages/distribution" 
-                        className={`relative py-1 text-sm font-medium transition-colors no-underline group ${
-                            isActive('/blogs') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
-                        }`}
-                    >
-                      Distribution
-                        <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${isActive('/blogs') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
-                    </a> 
 
                     {/* Partners */}
                     <a 
@@ -238,6 +236,7 @@ function Navbar() {
                                 <a href="/books/superheroes" onClick={() => setMenuOpen(false)} className="text-sm text-[#14213D]/80 hover:text-[#14213D] no-underline pl-2 py-0.5">↳ Superheroes in Training</a>
                                 <a href="/books/message-from-mom" onClick={() => setMenuOpen(false)} className="text-sm text-[#14213D]/80 hover:text-[#14213D] no-underline pl-2 py-0.5">↳ Message From Mom On Loneliness</a>
                                 <a href="/pages/audiobooks" onClick={() => setMenuOpen(false)} className="text-sm font-semibold text-[#14213D] no-underline mt-2 block">Audio Books</a>
+                                <a href="/pages/distribution" onClick={() => setMenuOpen(false)} className="text-sm font-semibold text-[#14213D] no-underline block">Distribution</a>
                             </div>
                         </div>
 

@@ -19,7 +19,7 @@ function MessageFromMom() {
                             <img
                                 src={bookletImage}
                                 alt="Message From Mom On Loneliness"
-                                className="max-h-full max-w-full object-contain shadow-2xl"
+                                className="max-h-full max-w-full object-contain mix-blend-multiply"
                             />
                         </div>
                     </div>
