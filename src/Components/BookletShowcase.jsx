@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bookletImage from '../assets/Message From Mom_ On Loneliness.png';
+import bookletImage from '../assets/Message From Mom_ A Loneliness Book New Cover Mockup.png';
 
 function BookletShowcase() {
     return (

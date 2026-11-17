@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bookletImage from '../assets/Message From Mom_ On Loneliness.png';
+import bookletImage from '../assets/Message From Mom_ A Loneliness Book New Cover Mockup.png';
 
 /* ---------- Small inline icons (stroke = currentColor) ---------- */
 const Icon = ({ children, className = 'w-5 h-5' }) => (
@@ -68,6 +68,23 @@ function ResourcesPage() {
     return (
         <div className="w-full bg-white font-sans">
 
+            {/* ---------- Safety strip ---------- */}
+            <div className="w-full bg-red-700 text-white px-6 md:px-12 py-3.5">
+                <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
+                    <span className="relative flex h-2.5 w-2.5">
+                        <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-ping"></span>
+                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-white"></span>
+                    </span>
+                    <p className="text-xs sm:text-sm font-semibold tracking-wide">
+                        In immediate danger? Call{' '}
+                        <a href={telHref(primaryEmergency.phone)} className="underline underline-offset-4 hover:text-white/80">
+                            {primaryEmergency.phone}
+                        </a>{' '}
+                        now.
+                    </p>
+                </div>
+            </div>
+
             {/* ---------- Hero ---------- */}
             <section className="relative w-full bg-[#14213D] text-white py-20 md:py-28 px-6 md:px-12 overflow-hidden">
                 {/* Decorative rings */}
@@ -114,23 +131,6 @@ function ResourcesPage() {
                     </div>
                 </div>
             </section>
-
-            {/* ---------- Safety strip ---------- */}
-            <div className="w-full bg-red-700 text-white px-6 md:px-12 py-3.5">
-                <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4 text-center">
-                    <span className="relative flex h-2.5 w-2.5">
-                        <span className="absolute inline-flex h-full w-full rounded-full bg-white opacity-75 animate-ping"></span>
-                        <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-white"></span>
-                    </span>
-                    <p className="text-xs sm:text-sm font-semibold tracking-wide">
-                        In immediate danger? Call{' '}
-                        <a href={telHref(primaryEmergency.phone)} className="underline underline-offset-4 hover:text-white/80">
-                            {primaryEmergency.phone}
-                        </a>{' '}
-                        now.
-                    </p>
-                </div>
-            </div>
 
             {/* ---------- Emergency Contacts ---------- */}
             <section id="emergency" className="w-full py-16 md:py-24 px-6 md:px-12 scroll-mt-20">
