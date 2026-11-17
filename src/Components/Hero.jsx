@@ -9,7 +9,10 @@ function Hero() {
                 backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.20), rgba(0, 0, 0, 0.20)), url(${heroBg})` 
             }}
         >
-            <div className="max-w-3xl mx-auto lg:mx-0 flex flex-col items-start text-left">
+            {/* Darker overlay on small screens so the text stays readable over the book covers */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/30 md:hidden"></div>
+
+            <div className="relative z-10 max-w-3xl mx-auto lg:mx-0 flex flex-col items-start text-left">
                 
                 {/* Subtitle Tag */}
                 <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-white/90 mb-4">
@@ -23,7 +26,7 @@ function Hero() {
 
                 {/* Description */}
                 <p className="text-base sm:text-lg text-white/95 leading-relaxed mb-10 max-w-2xl font-normal">
-                    Honestly, I am the last person on the face of the earth qualified <br /> to write a book. And at the same time, my love for my children <br /> kept pushing me forward.
+                    Honestly, I am the last person on the face of the earth qualified <br className="hidden sm:block" /> to write a book. And at the same time, my love for my children <br className="hidden sm:block" /> kept pushing me forward.
                 </p>
 
                 {/* CTA Buttons Container */}

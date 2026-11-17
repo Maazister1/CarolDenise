@@ -4,7 +4,7 @@ import qr from '../assets/qr.png';
 
 function Footer() {
     return (
-        <footer className="w-full bg-[#14213D] text-white pt-20 pb-10 px-6 md:px-12 font-sans border-t border-white/10">
+        <footer className="w-full bg-[#14213D] text-white pt-20 pb-28 md:pb-10 px-6 md:px-12 font-sans border-t border-white/10">
             <div className="max-w-7xl mx-auto">
                 
                 {/* Top Section: 4 Equal Columns Grid */}

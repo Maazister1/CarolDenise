@@ -120,6 +120,13 @@ function Navbar() {
                                             >
                                                 ↳ Superheroes in Training
                                             </a>
+                                            <a 
+                                                href="/books/message-from-mom" 
+                                                onClick={() => { setBooksDropdown(false); setEbooksOpen(false); }}
+                                                className="px-6 py-2.5 text-xs font-medium text-[#14213D]/80 hover:bg-[#14213D] hover:text-white hover:pl-8 transition-all duration-200 no-underline block"
+                                            >
+                                                ↳ Message From Mom On Loneliness
+                                            </a>
                                         </div>
                                     )}
                                 </div>
@@ -168,7 +175,18 @@ function Navbar() {
                     >
                         Partners
                         <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${isActive('/pages/communitypages') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
-                    </a>  
+                    </a>
+
+                    {/* Resources */}
+                    <a
+                        href="/pages/resources"
+                        className={`relative py-1 text-sm font-medium transition-colors no-underline group ${
+                            isActive('/pages/resources') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
+                        }`}
+                    >
+                        Resources
+                        <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${isActive('/pages/resources') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                    </a>
 
                     {/* Contact */}
                     <a 
@@ -218,12 +236,14 @@ function Navbar() {
                                 <span className="text-xs font-bold text-[#14213D]/70 mt-1">E-Books</span>
                                 <a href="/books/the-family" onClick={() => setMenuOpen(false)} className="text-sm text-[#14213D]/80 hover:text-[#14213D] no-underline pl-2 py-0.5">↳ The Family Matriarch</a>
                                 <a href="/books/superheroes" onClick={() => setMenuOpen(false)} className="text-sm text-[#14213D]/80 hover:text-[#14213D] no-underline pl-2 py-0.5">↳ Superheroes in Training</a>
+                                <a href="/books/message-from-mom" onClick={() => setMenuOpen(false)} className="text-sm text-[#14213D]/80 hover:text-[#14213D] no-underline pl-2 py-0.5">↳ Message From Mom On Loneliness</a>
                                 <a href="/pages/audiobooks" onClick={() => setMenuOpen(false)} className="text-sm font-semibold text-[#14213D] no-underline mt-2 block">Audio Books</a>
                             </div>
                         </div>
 
                         <a href="/pages/reviews" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">Reviews</a>
                         <a href="/pages/author" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">About the author</a>
+                        <a href="/pages/resources" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">Resources</a>
                         <a href="/pages/contact" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">Contact</a>
                         
                         <a 

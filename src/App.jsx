@@ -13,6 +13,7 @@ import Newsletter from './Components/Newsletter'
 import Footer from './Components/Footer'
 import Thefamily from './Books/Thefamily'
 import SuperHeros from './Books/SuperHeros'
+import MessageFromMom from './Books/MessageFromMom'
 
 // Import Pages from Pages folder
 import Contact from './Pages/Contact'
@@ -22,13 +23,14 @@ import AudioBookSection from './Components/AudioBookSection'
 import BookShowcase2 from './Components/Bookshowcase2'
 import CommunityPage from './Pages/CommunityPage'
 import Booksvideos from './Components/Booksvideos'
-import Resources from './Components/Resources'
 import Audiobooks from './Pages/Audiobook'
 import Event from './Components/Event'
 import Distribution from './Pages/Distribution'
+import ResourcesPage from './Pages/ResourcesPage'
 
 // Import the Floating Buy Button Component
 import FloatingBuyButton from './Components/FloatingBuyButton'
+import BookletShowcase from './Components/BookletShowcase'
 import Reveal from './Components/Reveal'
 import ScrollProgress from './Components/ScrollProgress'
 import useScrollReveal from './Components/useScrollReveal'
@@ -51,11 +53,11 @@ function Home() {
       <Reveal from="zoom"><StatsCounter /></Reveal>
       <Reveal from="left"><Booksvideos /></Reveal>
       <Reveal from="right"><BookShowcase /></Reveal>
+      <Reveal from="left"><BookletShowcase /></Reveal>
       <Reveal from="up"><MeetAuthor /></Reveal>
       <Reveal from="left"><AudioBookSection /></Reveal>
       <Reveal from="right"><Community /></Reveal>
       <Reveal from="zoom"><Event /></Reveal>
-      <Reveal from="left"><Resources /></Reveal>
       <Reveal from="right"><Readers /></Reveal>
       <Reveal from="up"><Newsletter /></Reveal>
     </div>
@@ -74,6 +76,7 @@ function AnimatedRoutes() {
         <Route path="/" element={<Home />} />
         <Route path="/books/the-family" element={<Thefamily />} />
         <Route path="/books/superheroes" element={<SuperHeros />} />
+        <Route path="/books/message-from-mom" element={<MessageFromMom />} />
         <Route path="/pages/contact" element={<Contact />} />
         <Route path="/pages/author" element={<Author />} />
         <Route path="/pages/communitypages" element={<CommunityPage />} />
@@ -82,6 +85,7 @@ function AnimatedRoutes() {
         <Route path="/bookshowcase2" element={<BookShowcase2 />} />
         <Route path="/pages/audiobooks" element={<Audiobooks />} />
         <Route path="/pages/distribution" element={<Distribution />} />
+        <Route path="/pages/resources" element={<ResourcesPage />} />
       </Routes>
     </div>
   )

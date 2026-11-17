@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import bookImage from '../assets/vol1.png';
-import bookImage2 from '../assets/vol2.png';
+import bookImage2 from '../assets/Superheroes in Training_ Volume2 New.png';
 import comingImage from '../assets/coming.png';
 import amazonIcon from '../assets/amazon.png';
 
