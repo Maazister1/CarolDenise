@@ -1,6 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import bookletImage from '../assets/Message From Mom_ A Loneliness Book New Cover Mockup.png';
 
 /* ---------- Small inline icons (stroke = currentColor) ---------- */
 const Icon = ({ children, className = 'w-5 h-5' }) => (
@@ -334,46 +332,6 @@ function ResourcesPage() {
                         <blockquote className="text-xl sm:text-3xl font-serif italic leading-snug">
                             LOVE WINS! That is the truth. If you cannot bring yourself to believe that yet, you can borrow my faith in love. Love is the MOST valuable tool in your toolbox. Keep that one close.
                         </blockquote>
-                    </div>
-                </div>
-            </section>
-
-            {/* ---------- Booklet CTA ---------- */}
-            <section className="w-full py-16 md:py-20 px-6 md:px-12">
-                <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div className="lg:col-span-5 flex justify-center">
-                        <div className="bg-[#f9f9f9] border border-[#14213D]/10 p-8 w-full max-w-md flex items-center justify-center">
-                            <img
-                                src={bookletImage}
-                                alt="Message From Mom On Loneliness"
-                                className="max-h-[300px] w-auto object-contain mix-blend-multiply"
-                            />
-                        </div>
-                    </div>
-                    <div className="lg:col-span-7">
-                        <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-3 block">
-                            MESSAGE FROM MOM
-                        </span>
-                        <h2 className="text-3xl sm:text-4xl font-serif font-normal text-[#14213D] tracking-tight mb-4">
-                            Message FrOm Mom On Loneliness
-                        </h2>
-                        <p className="text-sm sm:text-base text-[#14213D]/75 leading-relaxed mb-8">
-                            A short, heartfelt booklet for anyone carrying the weight of loneliness, and for everyone ready to help lift it.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                            <Link
-                                to="/books/message-from-mom"
-                                className="inline-flex items-center justify-center bg-[#14213D] hover:bg-[#1f3563] text-white text-xs font-bold uppercase tracking-wider py-3.5 px-8 no-underline transition-all"
-                            >
-                                READ THE BOOKLET
-                            </Link>
-                            <Link
-                                to="/pages/contact"
-                                className="inline-flex items-center justify-center border border-[#14213D]/30 text-[#14213D] text-xs font-bold uppercase tracking-wider py-3.5 px-8 no-underline transition-all bg-white"
-                            >
-                                SUGGEST A RESOURCE
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </section>

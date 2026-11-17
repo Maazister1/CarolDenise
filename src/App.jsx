@@ -27,6 +27,8 @@ import Audiobooks from './Pages/Audiobook'
 import Event from './Components/Event'
 import Distribution from './Pages/Distribution'
 import ResourcesPage from './Pages/ResourcesPage'
+import Blogs from './Pages/Blogs'
+import BlogPost from './Pages/BlogPost'
 
 // Import the Floating Buy Button Component
 import FloatingBuyButton from './Components/FloatingBuyButton'
@@ -86,6 +88,8 @@ function AnimatedRoutes() {
         <Route path="/pages/audiobooks" element={<Audiobooks />} />
         <Route path="/pages/distribution" element={<Distribution />} />
         <Route path="/pages/resources" element={<ResourcesPage />} />
+        <Route path="/pages/blogs" element={<Blogs />} />
+        <Route path="/pages/blogs/:slug" element={<BlogPost />} />
       </Routes>
     </div>
   )

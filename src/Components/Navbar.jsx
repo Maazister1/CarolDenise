@@ -153,15 +153,15 @@ function Navbar() {
                         )}
                     </div>
 
-                    {/* Reviews */}
-                    <a 
-                        href="/pages/reviews" 
+                    {/* Blogs */}
+                    <a
+                        href="/pages/blogs"
                         className={`relative py-1 text-sm font-medium transition-colors no-underline group ${
-                            isActive('/pages/reviews') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
+                            currentPath.startsWith('/pages/blogs') ? 'text-[#14213D] font-semibold' : 'text-[#14213D]/70 hover:text-[#14213D]'
                         }`}
                     >
-                        Reviews
-                        <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${isActive('/pages/reviews') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
+                        Blogs
+                        <span className={`absolute bottom-4px left-0 w-full h-2px bg-[#14213D] transition-all duration-300 origin-left ${currentPath.startsWith('/pages/blogs') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}></span>
                     </a>
 
                     {/* Partners */}
@@ -225,7 +225,7 @@ function Navbar() {
                 {menuOpen && (
                     <div className="absolute top-full left-0 w-full bg-white border-t border-[#14213D]/10 flex flex-col p-6 gap-3 xl:hidden z-50 shadow-xl rounded-none">
                         <a href="/" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">Home</a>
-                        <a href="/blogs" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">Blogs</a>
+                        <a href="/pages/blogs" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">Blogs</a>
                         
                         {/* Mobile Books Category & Subcategories */}
                         <div className="py-1 border-b border-[#14213D]/10 pb-3">
@@ -239,8 +239,6 @@ function Navbar() {
                                 <a href="/pages/distribution" onClick={() => setMenuOpen(false)} className="text-sm font-semibold text-[#14213D] no-underline block">Distribution</a>
                             </div>
                         </div>
-
-                        <a href="/pages/reviews" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">Reviews</a>
                         <a href="/pages/author" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">About the author</a>
                         <a href="/pages/resources" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">Resources</a>
                         <a href="/pages/contact" onClick={() => setMenuOpen(false)} className="text-base font-medium no-underline py-2 border-b border-[#14213D]/10 text-[#14213D]/80">Contact</a>
