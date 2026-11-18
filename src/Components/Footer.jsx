@@ -79,7 +79,7 @@ function Footer() {
                 {/* Bottom Copyright & Permanent White Social Links */}
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-6">
                     <p className="text-xs text-white/60 font-normal">
-                        © 2026 The Family Matriarch. All rights reserved.
+                        © 2026 Author Carol Denise. All rights reserved.
                     </p>
 
                     {/* Social Media Icons & Links (Permanent White) */}
