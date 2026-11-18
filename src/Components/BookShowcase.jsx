@@ -109,7 +109,7 @@
 
 
 import React from 'react';
-import book0 from '../assets/matriarch_transparent.png';
+import book0 from '../assets/Cthe family matrich new.png';
 import amazonIcon from '../assets/amazon.png';
 import BookShowcase2 from './Bookshowcase2';
 
