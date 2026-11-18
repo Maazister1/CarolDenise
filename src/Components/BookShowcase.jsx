@@ -109,9 +109,8 @@
 
 
 import React from 'react';
-import book0 from '../assets/mock1.png';
+import book0 from '../assets/matriarch_transparent.png';
 import amazonIcon from '../assets/amazon.png';
-import vol1Image from '../assets/vol1.png';
 import BookShowcase2 from './Bookshowcase2';
 
 function BookShowcase() {

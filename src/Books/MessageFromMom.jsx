@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import bookletImage from '../assets/Message From Mom_ A Loneliness Book New Cover Mockup.png';
+import bookletImage from '../assets/Message From Mom_ Loneliness Book Mockup.png';
 
 function MessageFromMom() {
     return (
@@ -19,7 +19,7 @@ function MessageFromMom() {
                             <img
                                 src={bookletImage}
                                 alt="Message From Mom On Loneliness"
-                                className="max-h-full max-w-full object-contain mix-blend-multiply"
+                                className="max-h-full max-w-full object-contain drop-shadow-xl"
                             />
                         </div>
                     </div>

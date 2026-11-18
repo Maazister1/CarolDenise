@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import book1 from '../assets/book1.png';
+import book1 from '../assets/matriarch_transparent.png';
 
 function TheFamily() {
     const [selectedFormat, setSelectedFormat] = useState('Hardcover');

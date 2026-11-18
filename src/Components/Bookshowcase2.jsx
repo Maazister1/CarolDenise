@@ -1,6 +1,6 @@
 import React from 'react';
-import book1 from '../assets/vol1.png';
-import book2 from '../assets/Superheroes in Training_ Volume2 New.png';
+import book1 from '../assets/superheroes_volume1_true_transparent.png';
+import book2 from '../assets/Superheroes in Training_ Volume 2.png';
 
 import comingImage from '../assets/coming.png';
 import amazonIcon from '../assets/amazon.png';
