@@ -1,68 +1,56 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react';
+import React, { useState } from 'react';
 
 function Booksvideos() {
     const [activeVideo, setActiveVideo] = useState(null);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const timeoutRef = useRef(null);
 
     const videos = [
         {
             id: 'family',
             title: 'The Family Matriarch Series',
             src: 'https://res.cloudinary.com/gm9p9g7j/video/upload/v1788203181/family.mp4',
-            description: 'A 15-second trailer into the legacy, love, and lessons.'
+            description: 'A 15-second trailer into the legacy, love, and lessons.',
+            tag: 'Teaser'
         },
         {
             id: 'long-trailer-1',
             title: 'Extended Cinematic Trailer I',
             src: 'https://res.cloudinary.com/gm9p9g7j/video/upload/v1790201152/long-trailer1.mp4',
-            description: 'An immersive extended look into the characters and world.'
+            description: 'An immersive extended look into the characters and world.',
+            tag: 'Extended Cut'
         },
         {
             id: 'superhero',
             title: 'Superheroes In Training',
             src: 'https://res.cloudinary.com/gm9p9g7j/video/upload/v1788203427/superhero.mp4',
-            description: 'So, what had HAPPENED was... discover the adventure.'
+            description: 'So, what had HAPPENED was... discover the adventure.',
+            tag: 'Teaser'
         },
         {
             id: 'long-trailer-2',
             title: 'Extended Cinematic Trailer II',
             src: 'https://res.cloudinary.com/gm9p9g7j/video/upload/v1790201281/long-trailer2.mp4',
-            description: 'Dive deeper with our second extended feature showcase.'
+            description: 'Dive deeper with our second extended feature showcase.',
+            tag: 'Extended Cut'
         }
     ];
 
-    // Auto-slide effect every 4 seconds
-    useEffect(() => {
-        resetTimeout();
-        timeoutRef.current = setTimeout(() => {
-            setCurrentIndex((prevIndex) => (prevIndex >= videos.length - 2 ? 0 : prevIndex + 1));
-        }, 4000);
-
-        return () => {
-            resetTimeout();
-        };
-    }, [currentIndex, videos.length]);
-
-    const resetTimeout = () => {
-        if (timeoutRef.current) {
-            clearTimeout(timeoutRef.current);
+    // Hover = silent preview (like streaming / cinema sites); leave = back to still frame
+    const startPreview = (e) => {
+        const v = e.currentTarget.querySelector('video');
+        if (v) v.play().catch(() => {});
+    };
+    const stopPreview = (e) => {
+        const v = e.currentTarget.querySelector('video');
+        if (v) {
+            v.pause();
+            v.currentTime = 1;
         }
     };
 
-    const nextSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex >= videos.length - 2 ? 0 : prevIndex + 1));
-    };
-
-    const prevSlide = () => {
-        setCurrentIndex((prevIndex) => (prevIndex === 0 ? videos.length - 2 : prevIndex - 1));
-    };
-
     return (
-        <section className="w-full py-12 md:py-24 px-4 sm:px-6 md:px-12 bg-[#14213D]/[0.08] border-b border-[#14213D]/10 font-sans overflow-hidden">
+        <section className="w-full py-14 md:py-20 px-4 sm:px-6 md:px-12 bg-[#14213D]/[0.12] border-b border-[#14213D]/10 font-sans">
             <div className="max-w-7xl mx-auto">
-                
+
                 {/* Section Header */}
                 <div className="text-center max-w-3xl mx-auto mb-10 md:mb-14">
                     <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] text-[#14213D]/70 mb-2 sm:mb-3 block">
@@ -72,92 +60,60 @@ function Booksvideos() {
                         Series Trailers
                     </h2>
                     <p className="text-xs sm:text-sm md:text-base text-[#14213D]/80 leading-relaxed font-serif italic px-2">
-                        Explore our book series trailers. Click any video to expand and watch in full screen.
+                        Hover to preview, click to watch.
                     </p>
                 </div>
 
-                {/* Slider Main Wrapper */}
-                <div className="relative w-full max-w-full mx-auto px-4 sm:px-12">
-                    
-                    {/* Left Arrow Button */}
-                    <button 
-                        onClick={prevSlide}
-                        className="absolute left-1 sm:left-2 top-1/2 -translate-y-1/2 z-30 bg-white text-[#14213D] hover:bg-[#14213D] hover:text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center border border-[#14213D]/10 transition-colors"
-                        aria-label="Previous Slide"
-                    >
-                        <IconChevronLeft className="w-6 h-6" />
-                    </button>
-
-                    {/* Right Arrow Button */}
-                    <button 
-                        onClick={nextSlide}
-                        className="absolute right-1 sm:right-2 top-1/2 -translate-y-1/2 z-30 bg-white text-[#14213D] hover:bg-[#14213D] hover:text-white w-10 h-10 rounded-full shadow-lg flex items-center justify-center border border-[#14213D]/10 transition-colors"
-                        aria-label="Next Slide"
-                    >
-                        <IconChevronRight className="w-6 h-6" />
-                    </button>
-
-                    {/* Slides Container with Reduced Blur/Fade Mask */}
-                    <div className="overflow-hidden rounded-xl py-2 relative [mask-image:_linear-gradient(to_right,transparent_0,_black_3%_97%,transparent_100%)] sm:[mask-image:_linear-gradient(to_right,transparent_0,_black_2%_98%,transparent_100%)]">
-                        <div 
-                            className="flex transition-transform duration-700 ease-in-out gap-4 sm:gap-6"
-                            style={{ transform: `translateX(-${currentIndex * (100 / 2)}%)` }}
+                {/* Trailer Grid */}
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+                    {videos.map((vid, i) => (
+                        <button
+                            key={vid.id}
+                            type="button"
+                            onClick={() => setActiveVideo(vid)}
+                            onMouseEnter={startPreview}
+                            onMouseLeave={stopPreview}
+                            className="group text-left flex flex-col bg-white rounded-none overflow-hidden border-2 border-[#14213D]/30 hover:border-[#14213D] shadow-md hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 cursor-pointer"
                         >
-                            {videos.map((vid) => (
-                                <div 
-                                    key={vid.id} 
-                                    className="w-full sm:w-1/2 lg:w-1/2 flex-shrink-0"
-                                >
-                                    <div className="bg-white border border-[#14213D]/10 p-4 sm:p-6 shadow-xl rounded-xl flex flex-col items-center h-full">
-                                        <h3 className="text-sm sm:text-lg font-serif text-[#14213D] mb-3 text-center border-b border-[#14213D]/10 pb-2 w-full truncate">
-                                            {vid.title}
-                                        </h3>
-                                        
-                                        {/* Video Thumbnail Container */}
-                                        <div 
-                                            onClick={() => setActiveVideo(vid)}
-                                            className="w-full aspect-video bg-black overflow-hidden relative mb-3 rounded-lg shadow-inner cursor-pointer group"
-                                        >
-                                            <video 
-                                                src={vid.src} 
-                                                autoPlay 
-                                                loop 
-                                                muted 
-                                                playsInline
-                                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                                            />
-                                            <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors flex items-center justify-center">
-                                                <span className="bg-[#14213D]/90 text-white text-[10px] px-2 py-1 rounded shadow opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity">
-                                                    Expand
-                                                </span>
-                                            </div>
-                                        </div>
+                            <div className="relative w-full aspect-video bg-[#14213D] overflow-hidden">
+                                <video
+                                    src={`${vid.src}#t=1`}
+                                    preload="metadata"
+                                    muted
+                                    loop
+                                    playsInline
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-[#14213D]/25 group-hover:bg-transparent transition-colors duration-300" />
 
-                                        <p className="text-[11px] sm:text-xs text-[#14213D]/70 text-center leading-relaxed line-clamp-2">
-                                            {vid.description}
-                                        </p>
-                                    </div>
+                                {/* Tag */}
+                                <span className="absolute top-2 left-2 bg-white/95 text-[#14213D] text-[8px] sm:text-[10px] font-bold uppercase tracking-widest px-1.5 sm:px-2 py-0.5 rounded-sm shadow">
+                                    {vid.tag}
+                                </span>
+
+                                {/* Play button */}
+                                <span className="absolute inset-0 flex items-center justify-center">
+                                    <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white text-[#14213D] flex items-center justify-center shadow-lg ring-4 ring-white/30 transition-all duration-300 group-hover:scale-90 group-hover:opacity-0">
+                                        <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-0.5 fill-current" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" /></svg>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div className="flex items-start gap-3 p-3 sm:p-4 border-t-2 border-transparent group-hover:border-[#14213D] transition-colors duration-300">
+                                <span className="hidden sm:block text-2xl font-serif text-[#14213D]/20 leading-none">
+                                    {String(i + 1).padStart(2, '0')}
+                                </span>
+                                <div className="min-w-0">
+                                    <h3 className="text-xs sm:text-sm md:text-base font-serif text-[#14213D] leading-snug line-clamp-2">
+                                        {vid.title}
+                                    </h3>
+                                    <p className="hidden sm:block text-[11px] text-[#14213D]/60 mt-1 leading-relaxed line-clamp-2">
+                                        {vid.description}
+                                    </p>
                                 </div>
-                            ))}
-                        </div>
-                    </div>
-
-                    {/* Custom Bottom Indicators */}
-                    <div className="flex justify-center items-center gap-2.5 mt-6">
-                        {[0, 1, 2].map((idx) => (
-                            <button
-                                key={idx}
-                                onClick={() => setCurrentIndex(idx)}
-                                className={`transition-all duration-300 rounded-full h-3 ${
-                                    currentIndex === idx 
-                                        ? 'w-10 bg-amber-500 shadow-md' 
-                                        : 'w-3 bg-[#14213D]/30 hover:bg-[#14213D]/50'
-                                }`}
-                                aria-label={`Go to slide ${idx + 1}`}
-                            />
-                        ))}
-                    </div>
-
+                            </div>
+                        </button>
+                    ))}
                 </div>
 
                 {/* Fullscreen Modal Popup */}
@@ -194,4 +150,4 @@ function Booksvideos() {
     );
 }
 
-export default Booksvideos;
+export default Booksvideos;
